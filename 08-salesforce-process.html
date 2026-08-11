@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salesforce Process - Sage Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path class="steam-line" d="M8 3c-.4.8.4 1.2 0 2S7.6 6.8 8 7.6"/><path class="steam-line" style="animation-delay:.5s" d="M12 3c-.4.8.4 1.2 0 2s-.4 1.8 0 2.6"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-title">Sage Knowledge Base</span>
+        <span class="brand-sub">By Stefan Chaanine (TP)</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="01-espresso-fundamentals.html">Espresso</a>
+      <a href="02-machine-components.html">Parts</a>
+      <a href="03-model-specs.html">Models</a>
+      <a href="04-troubleshooting.html">Troubleshooting</a>
+      <a href="05-customer-care-voice.html">ANCHOR Voice</a>
+      <a href="06-sample-call.html">Sample Call</a>
+      <a href="07-warranty-goodwill.html">Warranty</a>
+      <a href="08-salesforce-process.html">Salesforce</a>
+      <a href="09-glossary-team-ops.html">Glossary/Ops</a>
+      <a href="10-cram-sheet.html">Cram Sheet</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="kb-search" type="text" placeholder="Search the knowledge base…" autocomplete="off">
+      <div id="kb-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="h1-row">
+    <span class="page-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4 4 0 0 1-.5-7.97A5 5 0 0 1 16 8.5 4 4 0 0 1 17.5 17H7Z"/><path d="M12 11v6M9.5 14.5 12 17l2.5-2.5"/></svg></span>
+    <h1><span class="kicker">08 · Operations</span>Salesforce Process</h1>
+  </div>
+  <p class="page-intro">How to route a case, build it correctly, and process orders/refunds/escalations in Salesforce. Taken from Albert's Teams posts, wording kept close to the original.</p>
+
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#which-route">Which Route Am I On?</a></li>
+      <li><a href="#groundwork">Groundwork Before Any Route</a></li>
+      <li><a href="#six-routes">The Six Order Routes</a></li>
+      <li><a href="#patterns">Patterns Worth Memorising</a></li>
+      <li><a href="#case-notes">Case Notes Template</a></li>
+      <li><a href="#cancellations">Cancellations</a></li>
+      <li><a href="#backorder">Backorder &amp; Stock</a></li>
+      <li><a href="#screenmeet">ScreenMeet</a></li>
+      <li><a href="#refunds">Refunds</a></li>
+      <li><a href="#vat">VAT Invoice Requests</a></li>
+      <li><a href="#sia">SIA - Shipping In Advance</a></li>
+      <li><a href="#escalation">Escalations</a></li>
+      <li><a href="#non-activated">Non-Activated Orders</a></li>
+      <li><a href="#ui-map">Where the Buttons Are / Case Status Path</a></li>
+    </ol>
+  </div>
+
+  <h2 id="which-route">Which Route Am I On?</h2>
+  <p>Ask two questions, in order.</p>
+
+  <div class="flowchart">
+    <div class="fc-box start-end">Customer contacts you about an item</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-box decision">Did the customer receive the item?</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-branch">
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">No, never arrived</span>
+        <div class="fc-box outcome-good"><strong>Sale at 0 cost</strong>No return label. Complimentary Shipping.</div>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Yes, but faulty - replace free</span>
+        <div class="fc-box outcome-good"><strong>Accommodation</strong>Needs return location + return label.</div>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Yes, wants to buy something</span>
+        <div class="fc-box outcome-good"><strong>Sales order</strong>Full price or discount.</div>
+      </div>
+    </div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-box decision">Is it a machine, or a spare part / accessory?</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-branch">
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Machine</span>
+        <div class="fc-box outcome-bad">Accommodation or Sale at 0 cost only.<br><strong>Never sold at full price.</strong></div>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Spare part / accessory</span>
+        <div class="fc-box outcome-good">Any of the 6 routes can apply, including full price and discount sales.</div>
+      </div>
+    </div>
+  </div>
+
+  <p><strong>1. Did the customer receive the item?</strong></p>
+  <ul>
+    <li>No, it never arrived → <strong>Sale at 0 cost</strong> (no return label, Complimentary Shipping)</li>
+    <li>Yes, but it's faulty and we replace it free → <strong>Accommodation</strong> (return location + return label)</li>
+    <li>Yes, and they just want to buy something → <strong>Sales order</strong></li>
+  </ul>
+  <p><strong>2. Is it a machine or a spare part?</strong></p>
+  <ul>
+    <li>Machines can be replaced free (Accommodation) or re-sent at 0 cost</li>
+    <li>Machines are <strong>never</strong> sold at full price - full price and discounted sales are for spare parts and accessories only</li>
+  </ul>
+
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Situation</th><th>Route</th></tr></thead>
+    <tbody>
+      <tr><td>Faulty machine, replace free</td><td>Accommodation, replacing a machine</td></tr>
+      <tr><td>Faulty spare part or accessory, replace free</td><td>Accommodation, spare parts and accessories</td></tr>
+      <tr><td>Order never arrived, machine</td><td>Sale at 0 cost, finished goods</td></tr>
+      <tr><td>Order never arrived, spare part</td><td>Sale at 0 cost, spare parts and accessories</td></tr>
+      <tr><td>Customer buys a spare part</td><td>Sales at full price</td></tr>
+      <tr><td>Customer buys a spare part with a discount</td><td>Sales with discount</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout warn">
+    <span class="callout-label">Known contradiction - flag for your trainer</span>
+    A later cancellations note says "we cannot make a sale at full price" at all on machines, because customers must order machines from the site - while §7 above frames "full price" as an existing route for spare parts. Both sources agree <strong>machines are never sold at full price</strong>; the disagreement is only about whether "full price" exists as a route label at all. Check with your trainer which wording your team follows.
+  </div>
+
+  <h2 id="groundwork">Groundwork, Before Any Route</h2>
+  <p>Every route on this page assumes these three things already exist in Salesforce, built <strong>in this order</strong>: an Account, a Registered Product (Asset), and a Case. Do not skip a field - an incomplete case is what Task Force bounces back to you later. Full step-by-step below.</p>
+
+  <ol class="stepper">
+    <li id="step-create-account">
+      <div class="step-title">Create the Account</div>
+      <div class="step-body">
+        <p>The customer's record in Salesforce. Fill in every field below before moving on:</p>
+        <ul class="step-fields">
+          <li><strong>First name</strong> and <strong>Last name</strong></li>
+          <li><strong>Telephone number</strong>, always with country code (e.g. <code>+49123456789</code>)</li>
+          <li><strong>Email address</strong></li>
+          <li><strong>Language preference</strong></li>
+          <li><strong>Full shipping address</strong></li>
+          <li><strong>Account currency</strong></li>
+        </ul>
+        <div class="callout warn">
+          <span class="callout-label">Why this matters</span>
+          Wrong <strong>Language preference</strong> means the customer gets every future notification in the wrong language. <strong>Account currency</strong> must match the country - a mismatch breaks quotes and refunds down the line.
+        </div>
+        <p><strong>Confirm spelling using the phonetic alphabet</strong> for the name, email, and address before saving - this is the record everything else attaches to, so typos here cascade into every later step.</p>
+      </div>
+    </li>
+
+    <li id="step-create-asset">
+      <div class="step-title">Create or Update the Registered Product (Asset)</div>
+      <div class="step-body">
+        <p>The specific machine or part the customer owns. If one already exists for this customer and model, update it instead of creating a duplicate.</p>
+        <ul class="step-fields">
+          <li><strong>Asset name</strong> = customer's name + product model number</li>
+          <li><strong>Product</strong> = model number from the website</li>
+          <li><strong>Purchase date</strong>, according to the proof of purchase</li>
+          <li><strong>Batch code</strong> - if not available, put <code>1111</code></li>
+          <li><strong>Serial number</strong> - if not available, leave empty</li>
+        </ul>
+        <div class="callout tip">
+          <span class="callout-label">Don't block on missing data</span>
+          No proof of purchase yet? Use <code>1111</code> for Batch code and leave Serial number blank rather than guessing - a wrong serial number is worse than a missing one, since it can misattach warranty history to the wrong unit.
+        </div>
+      </div>
+    </li>
+
+    <li id="step-create-case">
+      <div class="step-title">Create the Case - Case Details</div>
+      <div class="step-body">
+        <p>Open the case and fill in every field in this section first:</p>
+        <ul class="step-fields">
+          <li><strong>Inquiry Type</strong></li>
+          <li><strong>Status</strong> (usually automatic, e.g. "Waiting on consumer")</li>
+          <li><strong>Waiting Reason</strong> (usually automatic)</li>
+          <li><strong>Case currency</strong> (must match the country)</li>
+          <li><strong>Country</strong></li>
+          <li><strong>Language</strong> - never plain "English"; choose Country(English) or Ireland(English)</li>
+        </ul>
+      </div>
+    </li>
+
+    <li id="step-case-product-info">
+      <div class="step-title">Fill in Product Info (on the case)</div>
+      <div class="step-body">
+        <p>This links the case to the machine and where it was bought:</p>
+        <ul class="step-fields">
+          <li><strong>Product</strong> = model number from the website</li>
+          <li><strong>Brand</strong> = Sage</li>
+          <li><strong>Batch Code</strong> = the 4 numbers after the letter in the serial number</li>
+          <li><strong>Serial number</strong></li>
+          <li><strong>Purchase from</strong></li>
+          <li><strong>Purchase date</strong></li>
+          <li><strong>Order</strong> - only if the machine was purchased from Sage Appliances</li>
+          <li><strong>Link the asset</strong> - update the existing one from Step 2, or create one</li>
+        </ul>
+      </div>
+    </li>
+
+    <li id="step-case-description-info">
+      <div class="step-title">Fill in Description Information</div>
+      <div class="step-body">
+        <p>This is what the repair centre and any teammate who picks up the case afterward actually reads:</p>
+        <ul class="step-fields">
+          <li><strong>Complaint code</strong> = the correct code for the issue with the unit</li>
+          <li><strong>Sub complaint</strong></li>
+          <li><strong>Subject</strong> = what the issue is, in writing</li>
+          <li><strong>Description</strong> = detailed, updated after every interaction</li>
+        </ul>
+        <div class="callout policy">
+          <span class="callout-label">Description is not optional detail</span>
+          This field is what the repair centre reads as their instructions. Vague or stale descriptions cause repeat questions back to the customer and slow the whole case down.
+        </div>
+      </div>
+    </li>
+
+    <li id="step-case-finish">
+      <div class="step-title">Finish: Vital Signs, Email, Case Comment</div>
+      <div class="step-body">
+        <p>Every case ends the same three-part way:</p>
+        <ul class="step-fields">
+          <li><strong>Complete the Vital Signs</strong></li>
+          <li><strong>Send email</strong> to the customer</li>
+          <li><strong>Case comment</strong>, in English - mention everything: the issue, what you did, what you advised</li>
+        </ul>
+        <div class="callout warn">
+          <span class="callout-label">Never forget</span>
+          Case comments stay private. <strong>Never toggle Public on.</strong>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <h2 id="six-routes">The Six Order Routes</h2>
+  <p>Every route below starts with the groundwork above already done.</p>
+
+  <details class="section" id="route-accom-machine"><summary>Accommodation - replacing a machine</summary><div class="body">
+    <ol class="stepper">
+      <li>Select return location in Case Details: <strong>Windhorn Domestic</strong> = Germany · <strong>Windhorn Intl</strong> = other countries · <strong>Perfetto Return Center</strong> = UAE</li>
+      <li>Create return label</li>
+      <li>Create accommodation, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Activate the order</li>
+      <li>Send quote</li>
+      <li>Send email to customer: <strong>036A</strong> = Accommodation with SIA · <strong>036B</strong> = Accommodation without SIA</li>
+      <li>Case comment</li>
+    </ol>
+  </div></details>
+
+  <details class="section" id="route-accom-parts"><summary>Accommodation - replacing spare parts and accessories</summary><div class="body">
+    <ol class="stepper">
+      <li>Create accommodation, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Activate the order</li>
+      <li>Send email to customer, Order confirmation template</li>
+      <li>Case comment</li>
+    </ol>
+    <p>Shorter than the machine version - no return location, no return label.</p>
+  </div></details>
+
+  <details class="section" id="route-zero-parts"><summary>Sale at 0 cost - spare parts and accessories</summary><div class="body">
+    <ol class="stepper">
+      <li>Create new case, Inquiry type: Order issue</li>
+      <li>Product details complete - fill Original PO with the order number, and also in Order</li>
+      <li>Complaint code: Order issue</li>
+      <li>Sub complaint</li>
+      <li>Description</li>
+      <li>Create Sale with 0 cost, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Select Complimentary Shipping</li>
+      <li>Activate the order</li>
+      <li>Email the customer, Order confirmation template</li>
+      <li>Case comment</li>
+    </ol>
+  </div></details>
+
+  <details class="section" id="route-zero-machine"><summary>Sale at 0 cost - finished goods and machines</summary><div class="body">
+    <p>Same start as spare parts, but the middle has the non-receipt form and an escalation.</p>
+    <ol class="stepper">
+      <li>Create new case, Inquiry type: Order issue</li>
+      <li>Product details complete - Original PO with order number, and also in Order</li>
+      <li>Complaint code: Order issue</li>
+      <li>Sub complaint</li>
+      <li>Description</li>
+      <li>Send email with template <strong>103-DPD Declaration of Non-Receipt</strong></li>
+      <li>Case comment</li>
+      <li>Wait until you receive the filled and signed form</li>
+      <li>Escalate to &gt; <strong>ORDER</strong></li>
+      <li>Email customer, Pre-escalation template</li>
+      <li>Case comment</li>
+      <li>Wait for feedback from ORDER</li>
+      <li>Create Sale with 0 cost, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Select Complimentary Shipping</li>
+      <li>Activate the order</li>
+      <li>Email the customer, Order confirmation template</li>
+      <li>Case comment</li>
+    </ol>
+  </div></details>
+
+  <details class="section" id="route-full-price"><summary>Sales at full price (spare parts &amp; accessories only)</summary><div class="body">
+    <ol class="stepper">
+      <li>Create the Order, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Send Quote</li>
+      <li>Activate is <strong>not needed</strong></li>
+      <li>Email the customer, Order confirmation template</li>
+      <li>Case comment</li>
+    </ol>
+  </div></details>
+
+  <details class="section" id="route-discount"><summary>Sales with discount</summary><div class="body">
+    <ol class="stepper">
+      <li>Create the Order by manually entering the discounted price, press <strong>NEW ORDER</strong></li>
+      <li>Select the shipping method</li>
+      <li>Send Quote</li>
+      <li>Activate is <strong>not needed</strong></li>
+      <li>Email the customer, Order confirmation template</li>
+      <li>Case comment</li>
+    </ol>
+    <p>Only difference from full price: you type the discounted price in yourself.</p>
+  </div></details>
+
+  <h2 id="patterns">Patterns Worth Memorising</h2>
+  <ul>
+    <li>Every route ends with <strong>email the customer, then case comment</strong></li>
+    <li>Every order starts with <strong>NEW ORDER</strong></li>
+    <li>After NEW ORDER it's always <strong>shipping method</strong> next</li>
+    <li><strong>Activate the order</strong> on accommodations and 0-cost sales. <strong>Not needed</strong> on full price and discounted sales</li>
+    <li><strong>Send Quote</strong> on the sales routes and on machine accommodation. Not on the two shorter free routes</li>
+    <li><strong>Complimentary Shipping</strong> only appears on Sale at 0 cost</li>
+    <li><strong>Return label and return location</strong> only appear on the machine accommodation</li>
+  </ul>
+
+  <h2 id="case-notes">Case Notes Template</h2>
+  <pre><code>Contact Type
+[Inbound Call / Outbound Call / Email / Chat]
+
+Reason
+[Why the customer contacted us / why we contacted the customer]
+
+Discussed
+- Customer reported:
+- Information provided:
+- Troubleshooting/checks:
+
+Actions Taken
+- [action taken]
+- [action taken]
+
+Next Steps
+- Pending action:
+- ETA/expectations shared:</code></pre>
+
+  <h2 id="cancellations">Cancellations</h2>
+  <p>All cancellations are handled by Task Force.</p>
+  <ol class="stepper">
+    <li>Escalate to Misc queue</li>
+    <li>In Comments write: <code>Cancellation Request</code></li>
+  </ol>
+  <p><strong>Conditions:</strong> applies to any order with a status that is not Shipped. If already Shipped and the customer wants to cancel, do <strong>not</strong> escalate to Misc - instead ask how they want to proceed, offer an RMA refund whenever possible, and advise accepting delivery + using the return label for a faster refund (avoids depot delays).</p>
+  <p>"Order generated" status means it's ready to ship.</p>
+
+  <h2 id="backorder">Backorder &amp; Stock</h2>
+  <ul>
+    <li>Check the machine is available before creating the order - if not, Sage will cancel it</li>
+    <li>Explain the situation and point the customer to the "Notify Me" button</li>
+    <li>Tier 2 can be asked to notify us when restocked</li>
+    <li>To check stock: left menu → Products → search the model number. BDE/AE only</li>
+    <li><strong>Never</strong> tell a customer the exact stock amount</li>
+    <li>Out of stock on the site but showing stock in Salesforce still counts as out of stock - that stock is reserved for replacements</li>
+    <li>If the customer won't wait, offer a repair instead</li>
+  </ul>
+
+  <h2 id="screenmeet">ScreenMeet</h2>
+  <p>Use it as often as possible. Send the invite link by email using the ScreenMeet template. Works fine on Android - on iOS it only works in Chrome. The customer cannot see us.</p>
+
+  <h2 id="refunds">Refunds</h2>
+
+  <h3 id="refund-automatic">Automatic refunds (Refund button)</h3>
+  <p><strong>Conditions:</strong> case completely filled in and correct · bought from us within 30 days of the order, for the whole order · create a separate case for each item · no refund without a return location.</p>
+  <p>Machines/appliances: customer must return it (gets a return label). Accessories: customer keeps the old/defective one, DIF ticked (Destroy In Field).</p>
+  <ol class="stepper">
+    <li>Complaint code: Final Return (Refund)</li>
+    <li>Click Refund</li>
+    <li>Select the item according to the order</li>
+    <li>Click Submit</li>
+    <li>Send the email</li>
+    <li>Case comment</li>
+  </ol>
+
+  <h3 id="refund-manual">Manual refunds (escalation)</h3>
+  <p>Escalate when the refund can't be processed automatically via RMA, or you can't provide a return label.</p>
+  <ol class="stepper">
+    <li>Escalate to Misc queue</li>
+    <li>In Comments write: <code>Refund Request, EUR XX</code> (exact amount)</li>
+    <li>Include: Order number; whether it's a whole-order or partial refund (name the product/SKU if partial)</li>
+  </ol>
+  <p>If details are missing, Task Force sends the case back to complete. Open a case for <strong>each</strong> item, even for a full-order refund.</p>
+
+  <h3 id="refund-b2c-rma">Full refund, building the case (B2C RMA)</h3>
+  <p>B2C RMA is the refund for a machine bought from the website.</p>
+  <ol class="stepper">
+    <li>Inquiry Type: Support &amp; Service</li>
+    <li>Product: model number from the website</li>
+    <li>Brand: Sage</li>
+    <li>Batch Code: the 4 numbers after the letter in the serial number</li>
+    <li>Serial number, Purchase from, Purchase date</li>
+    <li>Website order or Salesforce order number in Original PO# and in Order</li>
+    <li>Order: only if purchased from Sage Appliances</li>
+    <li>Complaint code and Sub complaint code: Final Return</li>
+    <li>Select the relevant Return location</li>
+    <li>Send the Return Label</li>
+    <li>Select REFUND</li>
+  </ol>
+  <p>Complaint Info on screen: Complaint Code = Final Return (Refund) · Sub Complaint Code = Buyer's remorse / other · Secondary Sub Complaint Code = left blank.</p>
+  <p>For spare parts/accessories: EMEA SOP &gt; Accounting &amp; Finance &gt; Refund: B2CRMA &gt; Spare Parts &amp; Accessories - same idea, DIF means the customer keeps the item.</p>
+
+  <h3 id="refund-flow-screen">The Refund flow screen</h3>
+  <ol class="stepper">
+    <li>Select the item to refund via the radio button in the ACTION column (multiple items all appear here)</li>
+    <li>Leave DIF alone - it ticks itself on spare parts (Destroy In Field, we don't need it back)</li>
+    <li>Click Submit once, after the selection is done</li>
+  </ol>
+  <p>Columns: ACTION, PRODUCT, PRODUCT NAME, PRODUCT TYPE, DIF, EXTENDED WARRANTY, RETURN ONLY EXTENDED WARRANTY.</p>
+
+  <div class="callout warn" id="shipping-cost-trap">
+    <span class="callout-label">The shipping cost trap</span>
+    If the Order Grand Total is 40 EUR or less <strong>and</strong> you're refunding it fully: check the order <strong>before</strong> applying any refund. If Financial Information shows shipping costs, do <strong>not</strong> use the automatic refund - use the manual refund process instead, and write in your case comment why. Example note to Task Force: "Full refund needed for order [number], shipping costs included so a manual refund is required, automated refund should not be used."
+  </div>
+
+  <h2 id="vat">VAT Invoice Requests</h2>
+  <ul>
+    <li>Complaint code: Registration &amp; Promotion</li>
+    <li>Sub complaint: Proof of purchase</li>
+    <li>Escalate To: Refund &amp; Billing Queue</li>
+    <li>Escalation Reason: Invoice Request</li>
+    <li>Escalation Notes: ask the team to send the VAT invoice/invoice, with order number and business unit</li>
+    <li>Status: Waiting Internal · Priority: Low · then Next</li>
+  </ul>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Code</th><th>Means</th></tr></thead>
+    <tbody>
+      <tr><td>BDE</td><td>EU country</td></tr>
+      <tr><td>BCH</td><td>Switzerland</td></tr>
+      <tr><td>BUK</td><td>United Kingdom</td></tr>
+      <tr><td>BAE</td><td>United Arab Emirates</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="sia">SIA - Shipping In Advance</h2>
+  <p>Only when the customer asks for a shipment in advance. We hold a small deposit so we can ship the new item <strong>before</strong> we get the faulty one back - the customer gets packaging to return the faulty unit safely.</p>
+  <ul>
+    <li>The deposit is only <strong>authorised</strong>, never charged</li>
+    <li>Voided once the faulty item is delivered back to our warehouse</li>
+    <li>Voids automatically if returned within <strong>20 days</strong> of receiving the new unit</li>
+    <li>If not delivered back within 20 days, the SIA <strong>is charged</strong></li>
+  </ul>
+  <p>Steps after following the accommodation process, if the customer asks for SIA: (1) inform the customer of the service fee, (2) send quote. The fee amount is in the accommodation order, under Financial Information as the <strong>CC Authorization Amount</strong>.</p>
+
+  <h2 id="escalation">Escalations</h2>
+
+  <h3>General Escalate screen</h3>
+  <p>Case tabs, left to right: Details, Case Comments, Feed, Related, ScreenMeet, Escalate, Activity, Quick Links, Communications.</p>
+  <p>Escalate tab flow: Escalate To → Escalation Reason (required) → Escalation Notes (255 character limit) → Status (usually Waiting Internal) → Priority → Next.</p>
+  <p>For a manual refund: Escalate To: Misc, Reason: Other, note carries web order, SF order, amount, and country.</p>
+
+  <h3 id="escalation-tier2">Escalation to Tier 2 (two parts - don't forget the second)</h3>
+  <p><strong>First:</strong> escalate normally on the Escalate tab (in training, use the case comment).</p>
+  <p><strong>Second:</strong> go into Feed, refresh, find your escalation, and comment on it with this template:</p>
+  <pre><code>Unit model specifications:
+POP (Y/N):
+Previous case (Y/N):
+Current situation:
+Customer's expectations:
+Other info:</code></pre>
+  <ul>
+    <li>Escalation reasons in use: replacement, order issue, refund, MR, Warranty Approval, TBS advice, tracking info</li>
+    <li>Unit model specifications: model number, whether it's RM, whether it's second-hand</li>
+    <li>Previous case: if yes, include the case number</li>
+    <li>Current situation: the issue, the troubleshooting (TBS) performed, and any solutions offered</li>
+    <li>Other info: repeat failure Y/N, why there's no proof of purchase if there isn't one, anything else relevant</li>
+  </ul>
+
+  <h2 id="non-activated">Non-Activated Orders</h2>
+  <p>Task Force cleans these up because of daily loads of incorrect orders - either missing a product or never activated.</p>
+  <ul>
+    <li>All Accommodation orders must be activated, even if SIA was already sent</li>
+    <li>If you forgot the SKU or closed the order while working on it, continue on the same order from the customer's account</li>
+    <li>Do not create unnecessary orders</li>
+  </ul>
+  <p><strong>What Task Force does:</strong> deletes orders missing a product; sends the rest back to you to check whether activation is needed (Task Force will not activate orders - that's your job).</p>
+
+  <h2 id="ui-map">Where the Buttons Are / Case Status Path</h2>
+  <p>Case record toolbar: <strong>New Order, Send Promo Code, Refund</strong> sit together on one row; <strong>Reset Password, Delete, New Order</strong> sit on the row above; <strong>Mark Status as Complete</strong> is the blue button. Refund is two along from New Order - <strong>Warranty Approval</strong> sits in the same dropdown, under it.</p>
+  <p>Right-hand panel: Inquiry Complaint Code Editor (Inquiry Type, then Complaint Code and Sub Complaint Code side by side, then Save), then Recent Orders, Work Orders, and Registered Products (Assets).</p>
+  <p><strong>Case status path:</strong> Waiting on consumer → Waiting internal → Response Received → Inventory OOS → Closed.</p>
+
+  <div class="pagefoot">
+    <a href="07-warranty-goodwill.html">← Warranty &amp; Goodwill</a>
+    <a href="09-glossary-team-ops.html">Next: Glossary, Team &amp; Ops →</a>
+  </div>
+  <p class="src">Source: Sales.md §1–10, §12–26 (merged with sage-salesforce-cheatsheet.md).</p>
+</main>
+
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

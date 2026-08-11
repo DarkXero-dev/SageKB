@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cram Sheet - Sage Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path class="steam-line" d="M8 3c-.4.8.4 1.2 0 2S7.6 6.8 8 7.6"/><path class="steam-line" style="animation-delay:.5s" d="M12 3c-.4.8.4 1.2 0 2s-.4 1.8 0 2.6"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-title">Sage Knowledge Base</span>
+        <span class="brand-sub">By Stefan Chaanine (TP)</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="01-espresso-fundamentals.html">Espresso</a>
+      <a href="02-machine-components.html">Parts</a>
+      <a href="03-model-specs.html">Models</a>
+      <a href="04-troubleshooting.html">Troubleshooting</a>
+      <a href="05-customer-care-voice.html">ANCHOR Voice</a>
+      <a href="06-sample-call.html">Sample Call</a>
+      <a href="07-warranty-goodwill.html">Warranty</a>
+      <a href="08-salesforce-process.html">Salesforce</a>
+      <a href="09-glossary-team-ops.html">Glossary/Ops</a>
+      <a href="10-cram-sheet.html">Cram Sheet</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="kb-search" type="text" placeholder="Search the knowledge base…" autocomplete="off">
+      <div id="kb-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="h1-row">
+    <span class="page-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M6 4h12l-2.5 3.5L18 11H6"/></svg></span>
+    <h1><span class="kicker">10 · Quick Reference</span>Cram Sheet</h1>
+  </div>
+  <p class="page-intro">The whole knowledge base condensed to the numbers, rules, and recall questions worth having memorized. Read the key numbers and golden rules first, then work through the self-check questions - cover the answer, say it out loud, then reveal.</p>
+
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#key-numbers">Key Numbers Cheat Table</a></li>
+      <li><a href="#golden-rules">Golden Rules - Never / Always</a></li>
+      <li><a href="#gotchas">Gotchas &amp; Flagged Contradictions</a></li>
+      <li><a href="#self-check">Self-Check Questions</a></li>
+    </ol>
+  </div>
+
+  <h2 id="key-numbers">Key Numbers Cheat Table</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Number</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td>18–22g</td><td>Ideal espresso dose</td></tr>
+      <tr><td>9 bar</td><td>Optimal brew pressure (≈120 psi ≈ 4 car tyres)</td></tr>
+      <tr><td>93°C</td><td>Precise brew temperature (default shot temp on Dual Boiler/Oracle)</td></tr>
+      <tr><td>130°C</td><td>Powerful steam temperature (Oracle default steam boiler)</td></tr>
+      <tr><td>89–95°C</td><td>Brew water temperature optimum range</td></tr>
+      <tr><td>62–65°C</td><td>Optimal milk frothing temperature (milk breaks down at 70°C)</td></tr>
+      <tr><td>10–15 kg</td><td>Standard tamp pressure (most models)</td></tr>
+      <tr><td>15–20 kg</td><td>Tamp pressure - Dual Boiler (SES920) specifically</td></tr>
+      <tr><td>8–12g</td><td>Ground coffee per single shot</td></tr>
+      <tr><td>8–11g / 16–19g</td><td>Standard basket dose - 1 cup / 2 cup</td></tr>
+      <tr><td>20–30 sec</td><td>Target extraction time for a balanced shot</td></tr>
+      <tr><td>8–12 sec</td><td>Target time for flow to start</td></tr>
+      <tr><td>5–20 days</td><td>Ideal bean freshness window post "Roasted On" date</td></tr>
+      <tr><td>Every 2–3 months</td><td>Water filter replacement (model-dependent, 60 days–3 months)</td></tr>
+      <tr><td>54mm / 58mm</td><td>The two portafilter/tamper sizes across the range</td></tr>
+      <tr><td>200 shots</td><td>Typical extraction count that triggers a CLEAN ME alert</td></tr>
+      <tr><td>30% off</td><td>Out-of-warranty discount - non-coffee appliances, grinders, drip machines, Nespresso-compatible</td></tr>
+      <tr><td>30 days</td><td>Refund window from order date (bought from Sage, whole order)</td></tr>
+      <tr><td>20 days</td><td>SIA auto-voids if faulty item returned within this window; charged if not</td></tr>
+      <tr><td>40 EUR</td><td>Order Grand Total threshold that triggers the "shipping cost trap" (manual refund required)</td></tr>
+      <tr><td>255 characters</td><td>Escalation Notes character limit</td></tr>
+      <tr><td>75%</td><td>Greek pay premium for Sundays/bank holidays</td></tr>
+      <tr><td>2 business days</td><td>Typical Task Force turnaround committed on a factory-defect escalation (see Sample Call)</td></tr>
+      <tr><td>21–23g</td><td>The known Oracle Jet overdose escalation pattern (factory-defect signature)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="golden-rules">Golden Rules - Never / Always</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Never advise Oracle Jet tamper fan changes</h3><p>Advise grind size instead. See <a href="04-troubleshooting.html#oracle-jet-tamper-fan">policy</a>.</p></div>
+    <div class="card"><h3>Never force a stuck SES985 latch</h3><p>Use descaler paste, wait, retry - or escalate to repair.</p></div>
+    <div class="card"><h3>Never say "nothing I can do" / "that's our policy" / "I don't know"</h3><p>Use the ANCHOR-approved alternatives instead. See <a href="05-customer-care-voice.html#avoid-say">table</a>.</p></div>
+    <div class="card"><h3>Never toggle case comments Public</h3><p>They stay private, always.</p></div>
+    <div class="card"><h3>Never sell a machine at full price</h3><p>Machines are Accommodation or Sale-at-0-cost only. Full/discounted price = spare parts and accessories only.</p></div>
+    <div class="card"><h3>Never promise a repair/replacement/refund before approval</h3><p>Goodwill is a judgment call, not an entitlement.</p></div>
+    <div class="card"><h3>Never use demineralised/distilled/RO water in any machine</h3><p>Damages the machine and hurts taste.</p></div>
+    <div class="card"><h3>Never grind unroasted/under-roasted beans</h3><p>Burr damage risk, explicitly a safety issue on some models.</p></div>
+    <div class="card"><h3>Always fill in Vital Signs + case comment</h3><p>Every route ends: email the customer, then case comment.</p></div>
+    <div class="card"><h3>Always escalate to Tier 2 in two parts</h3><p>Escalate tab, THEN comment on it again in Feed with the specification template.</p></div>
+    <div class="card"><h3>Always open a separate case per item</h3><p>Even for a full-order refund.</p></div>
+    <div class="card"><h3>Always match the ANCHOR flow</h3><p>Acknowledge (+ Honour) → Navigate → Commit → Own → Reassure. Resolve first contact where possible.</p></div>
+  </div>
+
+  <h2 id="gotchas">Gotchas &amp; Flagged Contradictions</h2>
+  <div class="callout warn">
+    <span class="callout-label">1 · Full-price sales route</span>
+    One source frames "full price" as an existing sales route for spare parts (§7 of the Salesforce process); a later cancellations note says a sale at full price can't be made at all because the customer orders from the site. Both agree machines are never full-price. Confirm with your trainer which wording applies to your team.
+  </div>
+  <div class="callout warn">
+    <span class="callout-label">2 · Glossary items still unsettled</span>
+    "IT" possibly should be "ITA" (clash with Information Technology) · "SM" possibly should mean Service Manual, not ScreenMeet · "WH" is warehouse, not to be confused with Windhorn (no abbreviation assigned yet). See <a href="09-glossary-team-ops.html#glossary">full glossary</a>.
+  </div>
+  <div class="callout warn">
+    <span class="callout-label">3 · Dimensions/weight are never in the manuals</span>
+    Don't guess or fabricate a number for any model's dimensions or weight - they're rating-label only, not printed as manual text.
+  </div>
+
+  <h2 id="self-check">Self-Check Questions</h2>
+  <p>Click to reveal each answer. Try answering out loud first.</p>
+
+  <details class="section"><summary>What are the 4 Keys and their target values?</summary><div class="body"><p>Dose 18–22g · Pressure 9 bar · Temperature 93°C · Steam 130°C. See <a href="01-espresso-fundamentals.html#four-keys">Espresso Fundamentals</a>.</p></div></details>
+
+  <details class="section"><summary>A shot pours fast, tastes sour, and has pale crema. What's wrong and what's the fix?</summary><div class="body"><p>Under-extracted - grind too coarse. Fix: grind finer. See <a href="01-espresso-fundamentals.html#reading-a-shot">Reading a Shot</a>.</p></div></details>
+
+  <details class="section"><summary>Which two machines don't have a three-way solenoid valve?</summary><div class="body"><p>Bambino (SES500) and Duo Temp Pro (SES810). See <a href="02-machine-components.html#solenoid-valve">Machine Components</a>.</p></div></details>
+
+  <details class="section"><summary>Which filter basket type is recommended for a customer with no grinder using pre-ground coffee?</summary><div class="body"><p>Dual Wall / pressurized basket. See <a href="02-machine-components.html#filter-baskets">Filter Baskets</a>.</p></div></details>
+
+  <details class="section"><summary>Which two models use The Impress™ Puck System, and which one uses Auto MilQ™?</summary><div class="body"><p>Impress Puck System: SES876 and SES882. Auto MilQ™: SES985 (Oracle Jet) only. See <a href="02-machine-components.html#feature-legend">Feature Legend</a>.</p></div></details>
+
+  <details class="section"><summary>A customer's Oracle Jet keeps dosing 21–23g. What do you NOT tell them to do, and what's the likely real cause?</summary><div class="body"><p>Do not tell them to adjust the tamper fan setting. If grind, tamp height, and basket are all correct, treat this as a likely factory defect (tamper-fan connector or double basket) and escalate - not user error. See <a href="04-troubleshooting.html#oracle-jet-tamper-fan">Tamper Fan policy</a> and the <a href="06-sample-call.html">Sample Call</a>.</p></div></details>
+
+  <details class="section"><summary>Dual Boiler (SES920) keeps turning itself on randomly. What's the 5-step process?</summary><div class="body"><p>1) Note SW version, power-on time, other appliances in use. 2) Power-cycle (unplug ~20s). 3) Update software if not latest. 4) If it recurs, check for a newer update, then factory reset. 5) If still unresolved, check again for an update; if none, apologise and offer replacement. See <a href="04-troubleshooting.html#dual-boiler-self-power">Known Issue</a>.</p></div></details>
+
+  <details class="section"><summary>What are the six letters of ANCHOR and what does each mean?</summary><div class="body"><p>Acknowledge, Navigate, Commit, Honour, Own, Reassure. See <a href="05-customer-care-voice.html#anchor">ANCHOR Model</a>.</p></div></details>
+
+  <details class="section"><summary>A customer demands a manager. What's the ANCHOR-approved response?</summary><div class="body"><p>"Of course, I can help with that. Before I arrange the next step, let me capture the full picture so the right person can review it properly." See <a href="05-customer-care-voice.html#angry">Handling Angry Customers</a>.</p></div></details>
+
+  <details class="section"><summary>What's the difference between "goodwill" and an entitlement?</summary><div class="body"><p>Goodwill protects customer trust in justified situations - it is never a public promise or a standard entitlement, and it's a judgment call, not automatic. See <a href="07-warranty-goodwill.html#goodwill-policy">Goodwill Policy</a>.</p></div></details>
+
+  <details class="section"><summary>Out-of-warranty coffee grinder - what does Sage offer?</summary><div class="body"><p>No repair offered. Offer 30% discount on a new appliance (Tier 2 for more). See <a href="07-warranty-goodwill.html#warranty-by-category">Warranty by Category</a>.</p></div></details>
+
+  <details class="section"><summary>A Nespresso-compatible Sage machine breaks 5 months after purchase. In warranty or not - who handles it?</summary><div class="body"><p>Still in-warranty rules apply only for the first 3 months (replace). Past 3 months, in-warranty issues go to Nespresso directly. See <a href="07-warranty-goodwill.html#warranty-by-category">Warranty by Category</a>.</p></div></details>
+
+  <details class="section"><summary>A customer bought an "RM" unit from idoodirect. Who handles the warranty claim?</summary><div class="body"><p>The retailer (idoodirect/Windhorn), not Sage - RM units carry their warranty with the seller. See <a href="07-warranty-goodwill.html#rm-units">RM Units</a>.</p></div></details>
+
+  <details class="section"><summary>Order never arrived - was it a machine or a spare part? What route, and what's different about the machine case?</summary><div class="body"><p>Both routes are "Sale at 0 cost." The machine version additionally requires the 103-DPD Declaration of Non-Receipt form and an escalation to ORDER before the sale is created - spare parts skip straight to creating the 0-cost sale. See <a href="08-salesforce-process.html#six-routes">The Six Order Routes</a>.</p></div></details>
+
+  <details class="section"><summary>What comes right after pressing NEW ORDER, on every route?</summary><div class="body"><p>Select the shipping method. See <a href="08-salesforce-process.html#patterns">Patterns Worth Memorising</a>.</p></div></details>
+
+  <details class="section"><summary>Which two things only appear on the machine Accommodation route, and nowhere else?</summary><div class="body"><p>Return label and return location. See <a href="08-salesforce-process.html#patterns">Patterns Worth Memorising</a>.</p></div></details>
+
+  <details class="section"><summary>Order Grand Total is 35 EUR and you're refunding it fully. What do you check before refunding, and why?</summary><div class="body"><p>Check Financial Information for shipping costs before refunding - if shipping costs are included, use the manual refund process instead of the automatic Refund button, and explain why in your case comment. See <a href="08-salesforce-process.html#refund-flow-screen">The Shipping Cost Trap</a>.</p></div></details>
+
+  <details class="section"><summary>What are the two parts of a Tier 2 escalation, and what's the second part people forget?</summary><div class="body"><p>First: escalate normally on the Escalate tab. Second (often forgotten): go to Feed, find your escalation, and comment on it with the specification template (Unit model specs, POP Y/N, Previous case Y/N, Current situation, Customer's expectations, Other info). See <a href="08-salesforce-process.html#escalation-tier2">Escalation to Tier 2</a>.</p></div></details>
+
+  <details class="section"><summary>What does SIA stand for, and when does the deposit actually get charged?</summary><div class="body"><p>Shipping In Advance. The deposit is only authorised, never charged upfront - it's charged only if the faulty item isn't delivered back to the warehouse within 20 days. See <a href="08-salesforce-process.html#sia">SIA</a>.</p></div></details>
+
+  <details class="section"><summary>What does "DIF" mean on the refund screen, and when does it apply?</summary><div class="body"><p>Destroy In Field - the customer keeps the old/defective item, we don't need it back. Ticks itself automatically on spare parts refunds. See <a href="08-salesforce-process.html#refund-flow-screen">The Refund Flow Screen</a>.</p></div></details>
+
+  <details class="section"><summary>What does "RM" mean in the glossary, and is there a caveat?</summary><div class="body"><p>Remanufactured. Caveat: this overlaps with the separate "RM units" third-party refurbished-machine topic (idoodirect/Windhorn) - same letters, related but distinct concepts. See <a href="09-glossary-team-ops.html#glossary">Glossary</a>.</p></div></details>
+
+  <details class="section"><summary>You're working a shift on August 15. What's the pay impact and why?</summary><div class="body"><p>+75% for that hour - August 15 (Assumption of the Virgin Mary) is an official Greek bank holiday under Β.Δ. 748/66. See <a href="09-glossary-team-ops.html#holidays">Greek Bank Holidays</a>.</p></div></details>
+
+  <details class="section"><summary>What's the difference between "Available Phone &amp; Case" and "Available Phone + Chat"?</summary><div class="body"><p>"Available Phone &amp; Case" is the default status for the whole shift (calls + assigned cases). "Available Phone + Chat" is calls-and-chats-only, and may only be used when a supervisor explicitly tells you to. See <a href="09-glossary-team-ops.html#aux">AUX / Status Codes</a>.</p></div></details>
+
+  <div class="pagefoot">
+    <a href="09-glossary-team-ops.html">← Glossary, Team &amp; Ops</a>
+    <a href="index.html">Back to Home →</a>
+  </div>
+  <p class="src">Synthesized from all nine other pages - cross-check anything unfamiliar against its source page before relying on it.</p>
+</main>
+
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

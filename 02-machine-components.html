@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machine Components &amp; Terminology - Sage Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path class="steam-line" d="M8 3c-.4.8.4 1.2 0 2S7.6 6.8 8 7.6"/><path class="steam-line" style="animation-delay:.5s" d="M12 3c-.4.8.4 1.2 0 2s-.4 1.8 0 2.6"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-title">Sage Knowledge Base</span>
+        <span class="brand-sub">By Stefan Chaanine (TP)</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="01-espresso-fundamentals.html">Espresso</a>
+      <a href="02-machine-components.html">Parts</a>
+      <a href="03-model-specs.html">Models</a>
+      <a href="04-troubleshooting.html">Troubleshooting</a>
+      <a href="05-customer-care-voice.html">ANCHOR Voice</a>
+      <a href="06-sample-call.html">Sample Call</a>
+      <a href="07-warranty-goodwill.html">Warranty</a>
+      <a href="08-salesforce-process.html">Salesforce</a>
+      <a href="09-glossary-team-ops.html">Glossary/Ops</a>
+      <a href="10-cram-sheet.html">Cram Sheet</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="kb-search" type="text" placeholder="Search the knowledge base…" autocomplete="off">
+      <div id="kb-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="h1-row">
+    <span class="page-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.5v2M12 18.5v2M20.5 12h-2M5.5 12h-2M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4M17.7 17.7l-1.4-1.4M7.7 7.7 6.3 6.3"/></svg></span>
+    <h1><span class="kicker">02 · Product Knowledge</span>Machine Components &amp; Terminology</h1>
+  </div>
+  <p class="page-intro">Every part name and proprietary term an agent needs to sound credible on a call - what it is, what it does, and the symptom it shows up in when it fails.</p>
+
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#machine-diagram">Machine at a Glance - Labeled Diagram</a></li>
+      <li><a href="#core-parts">Core Parts (all machines)</a></li>
+      <li><a href="#front-panel">Front Panel / Controls</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#tamper">Tamper</a></li>
+      <li><a href="#filter-baskets">Filter Baskets</a></li>
+      <li><a href="#pressure-gauge">Pressure Gauge</a></li>
+      <li><a href="#solenoid-valve">Three-Way Solenoid Valve</a></li>
+      <li><a href="#shower-screen">Shower Screen</a></li>
+      <li><a href="#group-seal">Group Head Seal</a></li>
+      <li><a href="#feature-legend">Feature Legend</a></li>
+    </ol>
+  </div>
+
+  <h2 id="machine-diagram">Machine at a Glance - Labeled Diagram</h2>
+  <p>A generic Barista-line layout (individual models vary - check <a href="03-model-specs.html">Model Specifications</a> for exact positions and sizes). Use this to point a customer to the right part by name.</p>
+  <div class="schematic-wrap">
+    <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Labeled diagram of a generic Sage espresso machine, showing bean hopper, grinder, grind dial, pressure gauge, water tank, group head, portafilter, steam wand, hot water outlet, cup warming tray, and drip tray">
+      <rect x="220" y="70" width="260" height="260" rx="16" class="schem-part"/>
+      <rect x="220" y="70" width="260" height="14" rx="4" class="schem-part-alt"/>
+      <polygon points="418,20 462,20 452,58 428,58" class="schem-part"/>
+      <ellipse cx="440" cy="20" rx="22" ry="6" class="schem-part-alt"/>
+      <circle cx="255" cy="112" r="15" class="schem-part-alt"/>
+      <circle cx="255" cy="112" r="4" class="schem-part"/>
+      <circle cx="255" cy="168" r="27" class="schem-part-alt"/>
+      <line x1="255" y1="168" x2="270" y2="152" class="schem-line"/>
+      <circle cx="255" cy="168" r="3" class="schem-part"/>
+      <rect x="228" y="245" width="42" height="95" rx="4" class="schem-part-alt" stroke-dasharray="5 4"/>
+      <rect x="310" y="322" width="60" height="18" class="schem-part"/>
+      <rect x="290" y="338" width="100" height="16" rx="6" class="schem-part"/>
+      <ellipse cx="340" cy="362" rx="38" ry="10" class="schem-part-alt"/>
+      <rect x="318" y="370" width="44" height="34" class="schem-part-alt"/>
+      <line x1="328" y1="370" x2="328" y2="392" class="schem-line"/>
+      <line x1="352" y1="370" x2="352" y2="392" class="schem-line"/>
+      <rect x="250" y="404" width="180" height="18" rx="3" class="schem-part"/>
+      <line x1="268" y1="406" x2="268" y2="420" class="schem-line"/>
+      <line x1="298" y1="406" x2="298" y2="420" class="schem-line"/>
+      <line x1="328" y1="406" x2="328" y2="420" class="schem-line"/>
+      <line x1="358" y1="406" x2="358" y2="420" class="schem-line"/>
+      <line x1="388" y1="406" x2="388" y2="420" class="schem-line"/>
+      <line x1="480" y1="190" x2="558" y2="122" class="schem-line" stroke-width="2.4"/>
+      <circle cx="558" cy="122" r="6" class="schem-part"/>
+      <path class="steam-line schem-line" d="M552 108c-3-8 4-11 1-19"/>
+      <path class="steam-line schem-line" style="animation-delay:.4s" d="M562 106c-3-8 4-11 1-19"/>
+      <path class="steam-line schem-line" style="animation-delay:.8s" d="M572 110c-3-8 4-11 1-19"/>
+      <rect x="474" y="252" width="12" height="26" rx="2" class="schem-part-alt"/>
+      <line x1="90" y1="40" x2="222" y2="76" class="schem-line"/>
+      <circle cx="222" cy="76" r="3" class="schem-part"/>
+      <text x="86" y="36" class="schem-label" text-anchor="end">Cup Warming Tray</text>
+      <line x1="90" y1="100" x2="245" y2="112" class="schem-line"/>
+      <text x="86" y="104" class="schem-label" text-anchor="end">Grind Size Dial</text>
+      <line x1="90" y1="168" x2="228" y2="168" class="schem-line"/>
+      <text x="86" y="172" class="schem-label" text-anchor="end">Pressure Gauge (9 bar target)</text>
+      <line x1="90" y1="292" x2="228" y2="292" class="schem-line"/>
+      <text x="86" y="296" class="schem-label" text-anchor="end">Water Tank (removable)</text>
+      <line x1="600" y1="24" x2="440" y2="22" class="schem-line"/>
+      <text x="604" y="28" class="schem-label">Bean Hopper</text>
+      <line x1="600" y1="60" x2="450" y2="55" class="schem-line"/>
+      <text x="604" y="64" class="schem-label">Grinder (inside chassis)</text>
+      <line x1="620" y1="88" x2="558" y2="122" class="schem-line"/>
+      <text x="624" y="92" class="schem-label">Steam Wand</text>
+      <line x1="620" y1="266" x2="486" y2="264" class="schem-line"/>
+      <text x="624" y="270" class="schem-label">Hot Water Outlet</text>
+      <line x1="600" y1="326" x2="370" y2="330" class="schem-line"/>
+      <text x="604" y="330" class="schem-label">Group Head</text>
+      <line x1="600" y1="358" x2="390" y2="346" class="schem-line"/>
+      <text x="604" y="362" class="schem-label">Portafilter</text>
+      <line x1="600" y1="414" x2="430" y2="412" class="schem-line"/>
+      <text x="604" y="418" class="schem-label">Drip Tray</text>
+    </svg>
+  </div>
+  <div class="callout tip">
+    <span class="callout-label">How to use this with a customer</span>
+    Point them to the part by name and rough position: "on the top right, above the machine" (bean hopper), "the round dial on the front" (grind size dial), "the round gauge with the needle" (pressure gauge), "the arm that swivels out the side" (steam wand). Avoids the customer guessing which part you mean.
+  </div>
+
+  <h2 id="core-parts">Core Parts (all machines)</h2>
+  <p>Every Sage espresso machine, regardless of model, is built around: <strong>water pump</strong>, <strong>heating element</strong>, <strong>solenoid valve</strong>, <strong>hoses</strong>, and <strong>circuit boards</strong>.</p>
+
+  <h2 id="front-panel">Front Panel / Controls (Barista-line)</h2>
+  <p>
+    <span class="chip">Hopper</span><span class="chip">Grinder</span><span class="chip">Grind size dial</span>
+    <span class="chip">Power</span><span class="chip">Grind amount</span><span class="chip">Filter size (single/double)</span>
+    <span class="chip">Tamper</span><span class="chip">Portafilter</span><span class="chip">Pressure gauge</span>
+    <span class="chip">Programme</span><span class="chip">Cup size buttons</span><span class="chip">Steam/hot dial</span>
+    <span class="chip">Hot water outlet</span><span class="chip">Group head</span><span class="chip">Steam wand</span>
+  </p>
+
+  <h2 id="accessories">Accessories</h2>
+  <p>
+    <span class="chip">Portafilter</span><span class="chip">Milk jug</span><span class="chip">1-cup single wall basket</span>
+    <span class="chip">2-cup single wall basket</span><span class="chip">Steam tip cleaning tool</span><span class="chip">Cleaning disc</span>
+    <span class="chip">Brush</span><span class="chip">Razor™ blade</span><span class="chip">Water filter + holder</span>
+    <span class="chip">1-cup dual wall basket</span><span class="chip">2-cup dual wall basket</span><span class="chip">Grinder cleaner</span>
+    <span class="chip">Machine descaler</span><span class="chip">Group head cleaner</span><span class="chip">Steam wand cleaner</span>
+  </p>
+
+  <h2 id="tamper">Tamper ("group handle")</h2>
+  <p>Packs ground coffee evenly into the portafilter basket for a quality extraction. Comes in two sizes: <strong>58mm</strong> and <strong>54mm</strong> - always match the tamper size to the portafilter size (see <a href="03-model-specs.html#comparison-table">model comparison table</a>).</p>
+
+  <h2 id="filter-baskets">Filter Baskets</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">Advanced user</div>
+      <h3>Single Wall</h3>
+      <p>Traditional basket, more room for coffee. Needs a precise grind size, dose, and tamp to extract well.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">Recommended default</div>
+      <h3>Dual Wall / Pressurized</h3>
+      <p>An internal screen forces coffee through one tiny hole under machine pressure - 58mm/54mm sizes. Best for customers with no grinder, or using pre-ground/non-fresh beans.</p>
+    </div>
+  </div>
+
+  <h2 id="pressure-gauge">Pressure Gauge</h2>
+  <p>Measures the resistance of water passing through the coffee puck. Brewing pressure should read <strong>9 bar</strong>. A gauge that won't reach 9 bar usually means incorrect dose, expired beans, or grind too coarse - see <a href="04-troubleshooting.html">Troubleshooting</a>.</p>
+
+  <h2 id="solenoid-valve">Three-Way Solenoid Valve</h2>
+  <p>Every machine has one <strong>except the Bambino (SES500) and the Duo Temp Pro (SES810)</strong>. It acts as a pressure-release valve and vacuum pump - this is what powers the "dry puck" feature, sucking excess moisture out of the puck right after extraction and releasing it through the purge spout underneath the machine.</p>
+
+  <h2 id="shower-screen">Shower Screen / Inner Shower Screen</h2>
+  <p>Found on the Barista line, Bambino, and Dual Boiler. Diffuses water from the group head so it spreads evenly across the coffee bed - this is the part most responsible for consistent shot-to-shot strength.</p>
+
+  <h2 id="group-seal">Group Head Seal / Brew Head Seal</h2>
+  <p>A silicone ring that seals the portafilter against the brew head, stopping leaks and holding correct pressure through the puck.</p>
+  <div class="callout warn">
+    <span class="callout-label">Wear symptom</span>
+    Leaking around the sides of the portafilter is the tell-tale sign of a worn seal. Typical lifespan is <strong>1–2 years or longer</strong>, depending on how often the machine is used.
+  </div>
+
+  <h2 id="feature-legend">Feature Legend - Proprietary Terms</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Term</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ThermoCoil / ThermoJet</strong></td><td>Sage's proprietary rapid water-heating systems. ThermoJet reaches extraction temperature in ~3 seconds - faster than the older ThermoCoil design.</td></tr>
+      <tr><td><strong>PID temperature control</strong></td><td>Electronic closed-loop control that holds brew temperature stable. Present on Impress, Pro, Touch, and higher-tier models.</td></tr>
+      <tr><td><strong>Dual boiler</strong></td><td>Separate boilers for brewing and steaming, so both can run at the same time. Found on the Dual Boiler, Oracle, and Oracle Touch; implied (not explicitly named) on the Oracle Jet.</td></tr>
+      <tr><td><strong>The Impress™ Puck System</strong></td><td>SES876 and SES882 only. Automated dose-loading, assisted tamping, and self-correcting dose measurement.</td></tr>
+      <tr><td><strong>Auto MilQ™</strong></td><td>SES985 (Oracle Jet) only. Fully automatic milk texturing system supporting multiple milk types.</td></tr>
+      <tr><td><strong>The Razor™</strong></td><td>Dose-trimming tool included with every model that has a grinder workflow - used to level the coffee puck to the correct dose.</td></tr>
+      <tr><td><strong>Water filter reminder cycle</strong></td><td>Ranges from 60 days (SES500 at high water hardness) to 3 months (most models) to 2 months (SES920 Dual Boiler).</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="pagefoot">
+    <a href="01-espresso-fundamentals.html">← Espresso Fundamentals</a>
+    <a href="03-model-specs.html">Next: Model Specifications →</a>
+  </div>
+  <p class="src">Source: SageKB.md §9 (merged from Sage.md).</p>
+</main>
+
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

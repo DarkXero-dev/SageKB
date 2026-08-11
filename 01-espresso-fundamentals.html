@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espresso Fundamentals - Sage Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path class="steam-line" d="M8 3c-.4.8.4 1.2 0 2S7.6 6.8 8 7.6"/><path class="steam-line" style="animation-delay:.5s" d="M12 3c-.4.8.4 1.2 0 2s-.4 1.8 0 2.6"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-title">Sage Knowledge Base</span>
+        <span class="brand-sub">By Stefan Chaanine (TP)</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="01-espresso-fundamentals.html">Espresso</a>
+      <a href="02-machine-components.html">Parts</a>
+      <a href="03-model-specs.html">Models</a>
+      <a href="04-troubleshooting.html">Troubleshooting</a>
+      <a href="05-customer-care-voice.html">ANCHOR Voice</a>
+      <a href="06-sample-call.html">Sample Call</a>
+      <a href="07-warranty-goodwill.html">Warranty</a>
+      <a href="08-salesforce-process.html">Salesforce</a>
+      <a href="09-glossary-team-ops.html">Glossary/Ops</a>
+      <a href="10-cram-sheet.html">Cram Sheet</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="kb-search" type="text" placeholder="Search the knowledge base…" autocomplete="off">
+      <div id="kb-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="h1-row">
+    <span class="page-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c-.5 1 .5 1.5 0 2.5S7 7 7.5 8"/><path d="M12 3c-.5 1 .5 1.5 0 2.5S11 7 11.5 8"/></svg></span>
+    <h1><span class="kicker">01 · Product Knowledge</span>Espresso Fundamentals</h1>
+  </div>
+  <p class="page-intro">The Third Wave "4 Keys" behind every good shot, how to read a shot by taste/flow/crema, and the dose &amp; ratio numbers agents are expected to know cold.</p>
+
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#four-keys">The 4 Keys</a></li>
+      <li><a href="#reading-a-shot">Reading a Shot</a></li>
+      <li><a href="#extraction-glossary">Under vs. Over-Extraction: Full Terms Glossary</a></li>
+      <li><a href="#shot-volume-targets">Shot Volume Targets</a></li>
+      <li><a href="#flavour-map">Pressure / Temperature Flavour Map</a></li>
+      <li><a href="#dose-grind">Dose, Grind &amp; Brew Ratios</a></li>
+      <li><a href="#perfect-shot">Perfect Single-Shot Checklist</a></li>
+      <li><a href="#milk-types">Milk Types Reference</a></li>
+    </ol>
+  </div>
+
+  <h2 id="four-keys">The 4 Keys (Third Wave Specialty Coffee)</h2>
+  <p>Every well-pulled shot depends on four variables being correct at the same time. Get one wrong and the shot tastes wrong even if the other three are perfect.</p>
+
+  <div class="stat-row">
+    <div class="stat"><span class="num">18–22g</span><span class="label">Ideal Dose</span></div>
+    <div class="stat"><span class="num">9 bar</span><span class="label">Optimal Pressure</span></div>
+    <div class="stat"><span class="num">93°C</span><span class="label">Precise Temperature</span></div>
+    <div class="stat"><span class="num">130°C</span><span class="label">Powerful Steam</span></div>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <caption>What each key delivers</caption>
+    <thead><tr><th>Key</th><th>Value</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Ideal Dose</td><td>18–22 g</td><td>Rich, full flavour</td></tr>
+      <tr><td>Optimal Pressure</td><td>9 bar</td><td>Irresistible body</td></tr>
+      <tr><td>Precise Temperature</td><td>93°C</td><td>Perfectly balanced taste</td></tr>
+      <tr><td>Powerful Steam</td><td>130°C</td><td>Silky, velvety mouthfeel</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout tip">
+    <span class="callout-label">Handy comparison</span>
+    9 bar = 120 psi ≈ the pressure inside 4 car tyres. Brew water temperature optimum range is 89–95°C. Optimal milk-frothing temperature is 62–65°C - milk starts breaking down at 70°C, so texturing above that ruins mouthfeel and can scald the customer's drink.
+  </div>
+
+  <h2 id="reading-a-shot">Reading a Shot</h2>
+  <p>This is the single most-tested skill: given a flow rate, colour and taste description, name the fault and the fix.</p>
+
+  <div class="table-wrap">
+  <table>
+    <caption>Diagnosis matrix</caption>
+    <thead><tr><th>Result</th><th>Cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Too Fast / Under-extracted</td><td>Grind too coarse</td><td>Grind finer</td></tr>
+      <tr><td>Too Slow / Over-extracted</td><td>Grind too fine</td><td>Grind coarser</td></tr>
+      <tr><td>Perfect / Balanced</td><td>Correct grind</td><td>-</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">Under-extracted</div>
+      <h3>Bland, sour, sharp</h3>
+      <p>Pale whitish crema. Flow is fast and pale. Grind finer to slow the water down and pull more flavour.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">Balanced</div>
+      <h3>Sweet &amp; creamy</h3>
+      <p>Thick warm-honey flow with a caramel-coloured crema. This is the target - no change needed.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">Over-extracted</div>
+      <h3>Bitter, burnt</h3>
+      <p>Dark, dripping flow with dark/spotty crema. Grind coarser to speed the water through.</p>
+    </div>
+  </div>
+
+  <h2 id="extraction-glossary">Under vs. Over-Extraction: Full Terms Glossary</h2>
+  <p>"Extraction" is how much flavour the water pulls out of the ground coffee. Every fault in this glossary is really just extraction happening too fast (under) or too slow (over). Diagnose with the flowchart, then use the glossary table below to explain the fix to the customer in plain language.</p>
+
+  <h3 id="extraction-flowchart">Diagnosis Flow</h3>
+  <div class="flowchart">
+    <div class="fc-box start-end">Taste and look at the shot</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-box decision">What does it taste and look like?</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-branch">
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Bland / Sour / Sharp</span>
+        <div class="fc-box outcome-bad"><strong>Under-extracted</strong>Pale, thin crema. Flow was fast.</div>
+        <div class="fc-arrow-down">&darr;</div>
+        <div class="fc-box fc-fix">
+          <strong>Try, in order:</strong>
+          <ul class="fc-fix-list">
+            <li>Grind finer</li>
+            <li>Increase the dose (8-11g/16-19g)</li>
+            <li>Tamp more firmly (10-15kg)</li>
+            <li>Use fresher beans (5-20 days post-roast)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Sweet / Creamy / Balanced</span>
+        <div class="fc-box outcome-good"><strong>Correctly extracted</strong>Golden-brown, caramel crema. Honey-like flow.</div>
+        <div class="fc-arrow-down">&darr;</div>
+        <div class="fc-box">No change - this is the target</div>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Bitter / Burnt / Ashy</span>
+        <div class="fc-box outcome-bad"><strong>Over-extracted</strong>Dark, spotty crema. Flow was slow or dripped.</div>
+        <div class="fc-arrow-down">&darr;</div>
+        <div class="fc-box fc-fix">
+          <strong>Try, in order:</strong>
+          <ul class="fc-fix-list">
+            <li>Grind coarser</li>
+            <li>Lower the dose (trim with Razor™)</li>
+            <li>Ease off the tamp</li>
+            <li>Unblock the filter basket, or descale if overdue</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="callout tip">
+    <span class="callout-label">Grind is the fastest lever, not the only one</span>
+    Grind size is the first thing to adjust because it's instant, but dose, tamp pressure, and bean freshness all shift extraction the same way. If grinding finer/coarser alone doesn't fix it, work down the rest of the list before assuming the machine is faulty.
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <caption>Every extraction term, its cause, the technical fix, and how to explain it to the customer</caption>
+    <thead><tr><th>Term</th><th>What it means</th><th>Likely cause</th><th>Technical fix</th><th>How to explain it to the customer</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Under-extracted</strong></td>
+        <td>Water moved through the coffee too fast, so it didn't pull out enough flavour. Tastes bland, sour, or sharp; flow is thin and fast; crema is pale and whitish.</td>
+        <td>Grind too coarse, not enough coffee (underdosed), or tamped too lightly</td>
+        <td>Grind finer, and/or increase dose, and/or tamp more firmly (10-15kg)</td>
+        <td>"Your shot pulled through a little too quickly, which is why it's tasting sharp or sour. I'm going to grind it a touch finer so the water has more time to pull the full flavour out."</td>
+      </tr>
+      <tr>
+        <td><strong>Over-extracted</strong></td>
+        <td>Water moved through the coffee too slowly, pulling out too much - including the bitter compounds. Tastes bitter or burnt; flow drips or stops; crema is dark and spotty.</td>
+        <td>Grind too fine, too much coffee (overdosed), or tamped too firmly</td>
+        <td>Grind coarser, and/or lower the dose (trim with Razor™), and/or ease off the tamp</td>
+        <td>"The water's struggling to get through the coffee, which is what's making it taste bitter or burnt. I'll grind it a bit coarser so it flows through more easily and tastes smoother."</td>
+      </tr>
+      <tr>
+        <td><strong>Balanced / correctly extracted</strong></td>
+        <td>The target: sweet and creamy taste, thick honey-like flow, caramel-coloured fine crema.</td>
+        <td>Correct grind, dose, and tamp together</td>
+        <td>No change needed</td>
+        <td>"That's exactly what a well-pulled shot should look and taste like - sweet, not bitter or sour."</td>
+      </tr>
+      <tr>
+        <td><strong>Crema</strong></td>
+        <td>The reddish-brown foam layer on top of a shot, made of coffee oils and CO2. Its colour and texture are a quick visual health-check of the extraction.</td>
+        <td>Golden-brown and fine = balanced. Pale/thin = under-extracted or stale beans. Dark/spotty = over-extracted.</td>
+        <td>Adjust grind per the crema colour; use fresh beans (5-20 days post-roast)</td>
+        <td>"The crema on top - that golden foam - tells us a lot. Yours is [pale/dark], which is why we're adjusting the grind."</td>
+      </tr>
+      <tr>
+        <td><strong>Flow rate / shot time</strong></td>
+        <td>How long it takes the shot to pour and how much liquid comes out. The primary objective measurement, independent of taste.</td>
+        <td>Too fast = grind too coarse or underdosed. Too slow/dripping = grind too fine or overdosed.</td>
+        <td>See <a href="#shot-volume-targets">Shot Volume Targets</a> below for exact ml/second numbers</td>
+        <td>"A good shot should take around 20 to 30 seconds to pour - yours finished in [X], so we know exactly what to adjust."</td>
+      </tr>
+      <tr>
+        <td><strong>Pre-infusion</strong></td>
+        <td>A brief low-pressure soak of the coffee puck before full pressure is applied, so water saturates evenly before extraction starts.</td>
+        <td>N/A - a built-in feature, not a fault</td>
+        <td>Available as manual or automatic depending on model (see <a href="03-model-specs.html">Model Specifications</a>)</td>
+        <td>"This machine wets the coffee gently before the full pressure kicks in - it's what gives a more even, consistent shot."</td>
+      </tr>
+      <tr>
+        <td><strong>Tamp too light</strong></td>
+        <td>Coffee packed unevenly or loosely in the basket, so water finds the path of least resistance and rushes through.</td>
+        <td>Insufficient tamping pressure (below 10-15kg)</td>
+        <td>Tamp firmly and level, 10-15kg (15-20kg on the Dual Boiler)</td>
+        <td>"We just need a firmer, level press on the grounds so the water pulls through evenly instead of rushing through the loose spots."</td>
+      </tr>
+      <tr>
+        <td><strong>Tamp too firm</strong></td>
+        <td>Coffee compressed so hard that water struggles to get through at all, or takes far too long.</td>
+        <td>Excessive tamping pressure</td>
+        <td>Ease off to 10-15kg; use a consistent, level press</td>
+        <td>"That was packed a little too tightly for the water to move through properly - we'll ease off the pressure slightly."</td>
+      </tr>
+      <tr>
+        <td><strong>Dose too light (underdosed)</strong></td>
+        <td>Not enough ground coffee in the basket for its size, so there's less resistance and the shot runs too fast.</td>
+        <td>Grind amount setting too low, or basket size mismatch</td>
+        <td>Increase dose to 8-11g (1 cup) / 16-19g (2 cup)</td>
+        <td>"There wasn't quite enough coffee in the basket for a full-bodied shot - we'll add a touch more."</td>
+      </tr>
+      <tr>
+        <td><strong>Dose too heavy (overdosed)</strong></td>
+        <td>Too much ground coffee packed into the basket, choking water flow and often causing overflow or leaking around the portafilter edge.</td>
+        <td>Grind amount setting too high, or wrong basket for the amount ground</td>
+        <td>Trim excess with the Razor™ tool, or select the correct filter size</td>
+        <td>"There was a bit too much coffee in there for this basket size, which is why it was struggling to flow - I'll level that off."</td>
+      </tr>
+      <tr>
+        <td><strong>Grind too coarse</strong></td>
+        <td>Coffee particles are too large, leaving big gaps for water to rush through with minimal contact time.</td>
+        <td>Grind size dial set too high (coarse)</td>
+        <td>Adjust grind size finer, one setting at a time, and re-test</td>
+        <td>"The coffee grounds were a little too chunky for this machine, so we're grinding it finer to slow the water down."</td>
+      </tr>
+      <tr>
+        <td><strong>Grind too fine</strong></td>
+        <td>Coffee particles are too small and pack too densely, choking water flow almost completely.</td>
+        <td>Grind size dial set too low (fine)</td>
+        <td>Adjust grind size coarser, one setting at a time, and re-test</td>
+        <td>"The grind was a touch too fine, so it was choking the water flow - we'll open it up slightly."</td>
+      </tr>
+      <tr>
+        <td><strong>Stale beans</strong></td>
+        <td>Beans past their flavour window won't produce good crema or balanced flavour, no matter how well the machine is dialled in.</td>
+        <td>Beans older than ~20 days post-roast, or pre-ground coffee older than a week</td>
+        <td>Use fresh beans, ideally 5-20 days after the "Roasted On" date</td>
+        <td>"Even a perfectly tuned machine can't fix beans that have gone past their best - fresher beans, roasted in the last couple of weeks, will make the biggest difference here."</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="shot-volume-targets">Shot Volume Targets</h2>
+  <p>Volume and time targets used to confirm whether a shot is under, balanced, or over - independent of taste.</p>
+
+  <p><strong>Single shot, 20 seconds:</strong></p>
+  <div class="zone-bar">
+    <div class="zone-under">UNDER &gt;40ml</div>
+    <div class="zone-balanced">BALANCED &gt;30ml</div>
+    <div class="zone-over">OVER &gt;20ml</div>
+  </div>
+  <div class="zone-caption"><span>Grind finer &rarr;</span><span>&larr; target &rarr;</span><span>&larr; Grind coarser</span></div>
+
+  <p><strong>Double shot, 30 seconds:</strong></p>
+  <div class="zone-bar">
+    <div class="zone-under">UNDER &gt;80ml</div>
+    <div class="zone-balanced">BALANCED &gt;60ml</div>
+    <div class="zone-over">OVER &gt;40ml</div>
+  </div>
+  <div class="zone-caption"><span>Grind finer &rarr;</span><span>&larr; target &rarr;</span><span>&larr; Grind coarser</span></div>
+
+  <div class="table-wrap">
+  <table>
+    <caption>Single vs. double shot volume/time targets</caption>
+    <thead><tr><th>Shot type</th><th>Under</th><th>Balanced</th><th>Over</th></tr></thead>
+    <tbody>
+      <tr><td>Single shot</td><td>&gt; 40 ml / 20 s</td><td>&gt; 30 ml / 20 s</td><td>&gt; 20 ml / 20 s</td></tr>
+      <tr><td>Double shot</td><td>&gt; 80 ml / 30 s</td><td>&gt; 60 ml / 30 s</td><td>&gt; 40 ml / 30 s</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout tip">
+    <span class="callout-label">Read it as</span>
+    More liquid than the balanced figure in the same time window = under-extracted (water ran through too easily). Less liquid than the balanced figure = over-extracted (water struggled to get through).
+  </div>
+
+  <h2 id="flavour-map">Pressure / Temperature Flavour Map</h2>
+  <div class="table-wrap">
+  <table>
+    <caption>What each variable being wrong tastes like</caption>
+    <thead><tr><th>Variable off</th><th>Direction</th><th>Resulting flavour</th></tr></thead>
+    <tbody>
+      <tr><td>Pressure</td><td>Too low (−9 bar)</td><td>Grassy / sour - sugars not broken down (under-extracted)</td></tr>
+      <tr><td>Pressure</td><td>Too high (+9 bar)</td><td>Bitter - plant fibres breaking down (over-extracted)</td></tr>
+      <tr><td>Temperature</td><td>Too high</td><td>Ashy</td></tr>
+      <tr><td>Temperature</td><td>Too low</td><td>Sour</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout warn">
+    <span class="callout-label">Precision matters</span>
+    A temperature swing of just 1°C can shift a shot from balanced to ashy or bitter. The ideal extraction curve ramps up to 93°C and holds flat - competitor machines often spike and decay instead.
+  </div>
+
+  <h2 id="dose-grind">Dose, Grind &amp; Brew Ratios</h2>
+  <ul>
+    <li>Ideal dose is <strong>18–22g</strong>, using beans fresh within 30 days of the "roasted on" date.</li>
+    <li>A typical competitor's standard automatic dose is under 14g - less coffee, coarser grind, weaker/watery result.</li>
+    <li>Grinder mechanics: setting the grinder <strong>coarser</strong> shifts the upper burr further from the lower burr (bigger gap = bigger grounds).</li>
+  </ul>
+
+  <div class="table-wrap">
+  <table>
+    <caption>Brew ratios, 54mm portafilter</caption>
+    <thead><tr><th>Type</th><th>Ground coffee (dry)</th><th>Finished drink</th><th>Ratio</th></tr></thead>
+    <tbody>
+      <tr><td>Ristretto</td><td>10–12 g</td><td>10–12 g</td><td>100%</td></tr>
+      <tr><td>Espresso</td><td>10–12 g</td><td>20–24 g</td><td>50%</td></tr>
+      <tr><td>Double Espresso</td><td>17–19 g</td><td>34–38 g</td><td>50%</td></tr>
+      <tr><td>Lungo</td><td>10–12 g</td><td>25–30 g</td><td>33%</td></tr>
+      <tr><td>Drip Coffee</td><td>7–8 g</td><td>100 g</td><td>6%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="perfect-shot">Perfect Single-Shot Checklist</h2>
+  <div class="card-grid">
+    <div class="card"><div class="card-num">Pressure</div><h3>9 bar</h3><p>Measured at the filter.</p></div>
+    <div class="card"><div class="card-num">Dose</div><h3>8–12g</h3><p>Ground coffee, per single shot.</p></div>
+    <div class="card"><div class="card-num">Tamp</div><h3>10–15 kg</h3><p>Contact tamping pressure.</p></div>
+    <div class="card"><div class="card-num">Cup fill</div><h3>30 ml</h3><p>Target liquid in the cup.</p></div>
+    <div class="card"><div class="card-num">Time</div><h3>20–30 sec</h3><p>Processing / extraction time.</p></div>
+    <div class="card"><div class="card-num">Water filter</div><h3>Every 3 months</h3><p>Reduces descaling frequency, protects taste.</p></div>
+  </div>
+  <div class="callout tip">
+    <span class="callout-label">Non-negotiables</span>
+    Sticking to the cleaning/descaling cycle is a <strong>MUST</strong>, on top of daily cleaning. Beans must be drum-roasted and freshly ground - anything else caps the flavour no matter how well the machine is dialled in.
+  </div>
+
+  <h2 id="milk-types">Milk Types Reference</h2>
+  <p>Recognise these when a customer names their milk - each behaves differently under steam.</p>
+  <p>
+    <span class="chip">Raw</span><span class="chip">Whole</span><span class="chip">Homo</span><span class="chip">2%</span>
+    <span class="chip">1%</span><span class="chip">Skim</span><span class="chip">Chocolate</span><span class="chip">Buttermilk</span>
+    <span class="chip">Filtered</span><span class="chip">Organic</span><span class="chip">Lactose-free</span><span class="chip">Evaporated</span>
+    <span class="chip">Sweetened condensed</span><span class="chip">Soy</span><span class="chip">Almond</span><span class="chip">Rice</span>
+  </p>
+
+  <div class="pagefoot">
+    <a href="index.html">← Back to Home</a>
+    <a href="02-machine-components.html">Next: Machine Components &amp; Terminology →</a>
+  </div>
+  <p class="src">Source: SageKB.md §8 (merged from Sage.md), cross-checked against SageSummary.md §1.</p>
+</main>
+
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

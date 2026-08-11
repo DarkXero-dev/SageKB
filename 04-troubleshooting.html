@@ -1,0 +1,1870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting - Sage Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path class="steam-line" d="M8 3c-.4.8.4 1.2 0 2S7.6 6.8 8 7.6"/><path class="steam-line" style="animation-delay:.5s" d="M12 3c-.4.8.4 1.2 0 2s-.4 1.8 0 2.6"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-title">Sage Knowledge Base</span>
+        <span class="brand-sub">By Stefan Chaanine (TP)</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="01-espresso-fundamentals.html">Espresso</a>
+      <a href="02-machine-components.html">Parts</a>
+      <a href="03-model-specs.html">Models</a>
+      <a href="04-troubleshooting.html">Troubleshooting</a>
+      <a href="05-customer-care-voice.html">ANCHOR Voice</a>
+      <a href="06-sample-call.html">Sample Call</a>
+      <a href="07-warranty-goodwill.html">Warranty</a>
+      <a href="08-salesforce-process.html">Salesforce</a>
+      <a href="09-glossary-team-ops.html">Glossary/Ops</a>
+      <a href="10-cram-sheet.html">Cram Sheet</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="kb-search" type="text" placeholder="Search the knowledge base…" autocomplete="off">
+      <div id="kb-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="h1-row">
+    <span class="page-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg></span>
+    <h1><span class="kicker">04 · Product Knowledge</span>Troubleshooting</h1>
+  </div>
+  <p class="page-intro">Every fault is written as <strong>Issue &rarr; Troubleshooting steps</strong>: read the issue title, then work down the numbered steps in order until it's resolved. Start with <a href="#common-issues">Common Issues Across All Models</a> - most calls fall into these patterns no matter which machine. Then use the per-model section only for button names, screen text, and menu paths that differ.</p>
+
+  <div class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#symptom-router">Start Here: What's the Symptom?</a></li>
+      <li><a href="#common-issues">Common Issues Across All Models</a></li>
+      <li><a href="#known-issues">Known Issue Deep-Dives</a></li>
+      <li><a href="#ses500">SES500 - Bambino Plus</a></li>
+      <li><a href="#ses870">SES870 - Barista Express (Safety Guide)</a></li>
+      <li><a href="#ses875">SES875 - Barista Express</a></li>
+      <li><a href="#ses876">SES876 - Barista Express Impress</a></li>
+      <li><a href="#ses878">SES878 - Barista Pro</a></li>
+      <li><a href="#ses880">SES880 - Barista Touch</a></li>
+      <li><a href="#ses882">SES882 - Barista Touch Impress</a></li>
+      <li><a href="#ses920">SES920 - Dual Boiler</a></li>
+      <li><a href="#ses980">SES980 - Oracle</a></li>
+      <li><a href="#ses985">SES985 - Oracle Jet</a></li>
+      <li><a href="#ses990">SES990 - Oracle Touch</a></li>
+    </ol>
+  </div>
+
+  <h2 id="symptom-router">Start Here: What's the Symptom?</h2>
+  <div class="flowchart">
+    <div class="fc-box start-end">Customer describes a problem</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-box decision">Which category does it fall into?</div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-branch">
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Water / steam / heat</span>
+        <a class="fc-box" href="#common-issues">No water flow, no hot water, no steam, or won't heat up</a>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Espresso flow / taste</span>
+        <a class="fc-box" href="#common-issues">Drips, runs too fast, no crema, or leaks around the portafilter</a>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Steam wand / milk</span>
+        <a class="fc-box" href="#common-issues">Weak froth, blocked wand, or milk not texturing</a>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Power / shutdown</span>
+        <a class="fc-box" href="#common-issues">Won't turn on, shuts off mid-use, or shows an error code</a>
+      </div>
+      <div class="fc-branch-col">
+        <span class="fc-branch-label">Grinder</span>
+        <a class="fc-box" href="#common-issues">No ground coffee, loud noise, or won't lock the hopper</a>
+      </div>
+    </div>
+    <div class="fc-arrow-down">&darr;</div>
+    <div class="fc-box outcome-good">Check <strong>Common Issues Across All Models</strong> first - it covers most calls regardless of machine. Not listed there? Jump to that model's own section using the sidebar list below.</div>
+  </div>
+
+  <h2 id="common-issues">Common Issues Across All Models</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No water flow from group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Empty or unlocked water tank &rarr; Fill and fully lock the tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No hot water / no steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty, not at temperature, or descale overdue &rarr; Fill, wait to heat, or run descale cycle</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso drips or won't flow</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind too fine, overdosed, over-tamped, or blocked basket &rarr; Coarser grind, lower dose, correct tamp (10–15kg most models, 15–20kg Dual Boiler), unblock basket</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso flows too fast</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind too coarse or underdosed &rarr; Finer grind, increase dose</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <p class="issue-cause"><em>Possible cause(s): Stale beans, wrong basket type, or light tamp</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fresh beans (5–20 days post "Roasted On")</li>
+      <li>Dual Wall basket for pre-ground</li>
+      <li>Tamp firmly</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam wand blocked / weak froth</h4>
+    <p class="issue-cause"><em>Possible cause(s): Milk residue or scale buildup in tip</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pin tool</li>
+      <li>Unscrew and soak in hot water</li>
+      <li>Descale if persistent</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but stops working</h4>
+    <p class="issue-cause"><em>Possible cause(s): Safety thermal cut-out (overheat protection)</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Power off, unplug, cool 30–60+ minutes, retry</li>
+      <li>Contact Sage support if it recurs</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter leaks around the edge</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not locked in fully, grounds on rim, or worn silicone seal &rarr; Insert fully and rotate to resistance, clean rim, replace seal if worn</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No ground coffee from grinder</h4>
+    <p class="issue-cause"><em>Possible cause(s): Empty hopper, blocked chute/burrs, or moisture</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Refill beans</li>
+      <li>Clean grinder chamber and chute</li>
+      <li>Dry thoroughly before reassembly</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pump makes pulsing/loud noise</h4>
+    <p class="issue-cause"><em>Possible cause(s): Normal pump operation, OR empty/unlocked tank, OR demineralised/distilled water</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Usually normal</li>
+      <li>Otherwise fill/lock tank or switch to filtered tap water</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Descale/clean indicator on</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Scheduled maintenance due (every 60–200 shots or 60–90 days, model-dependent) &rarr; Run the model's cleaning or descale cycle</li>
+    </ol>
+  </div>
+  </div>
+  <div class="callout warn">
+    <span class="callout-label">General care rules - all models</span>
+    Never immerse the cord, plug, or appliance body in water · hand-wash removable parts only, nothing is dishwasher safe · never use abrasive cleaners, pads, or alkaline agents · avoid demineralised, distilled, or heavily-filtered (RO) water - it degrades taste and can damage the machine · replace the water filter every 2–3 months (model-dependent) · use freshly roasted whole beans, never grind unroasted/under-roasted beans · if a fault won't clear after the recommended cool-down/retry, escalate to Sage/Breville Customer Service - attempting an internal repair voids the warranty.
+  </div>
+
+  <h2 id="known-issues">Known Issue Deep-Dives</h2>
+
+  <div class="callout policy" id="oracle-jet-tamper-fan">
+    <span class="callout-label">Policy - Oracle Jet (SES985) tamper fan</span>
+    <strong>Do NOT advise customers to change tamper fan settings.</strong> The factory ships the correct settings (2 lines); manipulating this on a new unit has repeatedly caused inconsistent brewing. Only amend once the machine is old and the beans are no longer very fresh.
+    <ul>
+      <li>Customer wants less coffee ground / wavy tamping → advise <strong>lowering the grind size setting</strong> instead.</li>
+      <li>Coffee doesn't run through → advise a <strong>coarser grind</strong> instead.</li>
+    </ul>
+    <strong>Known escalation pattern:</strong> Oracle Jet consistently doses 21–23g despite correct grind, max tamp height, and a standard double basket → treat as a possible factory-defect part (tamper-fan connector and/or double filter basket), not user error. See the worked example on the <a href="06-sample-call.html">Sample Call</a> page.
+  </div>
+
+  <div class="callout warn" id="latch-stuck">
+    <span class="callout-label">Latch stuck - SES985 Oracle-family</span>
+    Can get stuck due to scale buildup. Fix: mix descaler with a little water into a paste, apply to the edge of the latch, leave a few minutes. <strong>Do NOT force the latch open</strong> - risk of damage. If it's still stuck after descaler treatment, proceed with a repair.
+  </div>
+
+  <div class="callout warn" id="dual-boiler-self-power">
+    <span class="callout-label">Known issue - Dual Boiler (SES920) turns on by itself</span>
+    Random times, often flagged via the app. Work through in order:
+    <ol>
+      <li>Note the current software version, the time it powered on, and whether other appliances were in use.</li>
+      <li>Power-cycle: unplug from mains ~20 seconds, check if resolved.</li>
+      <li>If not on the latest software, recommend updating.</li>
+      <li>If it still recurs after update: check for a newer software update, then have the customer do a factory reset.</li>
+      <li>If still unresolved: check again for a software update; if none, apologise and offer a replacement.</li>
+    </ol>
+  </div>
+
+  <div class="callout tip" id="dual-boiler-inconsistent-shot">
+    <span class="callout-label">Known issue - Dual Boiler inconsistent shot with auto dial-in</span>
+    <ol>
+      <li>Check the beans - dark roast works better with Dual Boiler; use the "roasted on" date, not "best before."</li>
+      <li>Try switching between volume-based and time-based auto dial-in.</li>
+      <li>After changing grind size, do a double-tap purge of the grinder so the next dose is entirely the new grind size.</li>
+      <li>Check/adjust the tamper fan height/connector (setup guidance was under product-team review at time of writing).</li>
+    </ol>
+  </div>
+
+  <h2 id="ses500">SES500 - Bambino™ Plus</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water does not flow / no hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty / not locked &rarr; Fill / lock tank</li>
+      <li>Needs descaling &rarr; descale cycle</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips or not at all</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too finely &rarr; Coarser grind</li>
+      <li>Too much coffee &rarr; lower dose (trim with Razor™)</li>
+      <li>Tamped too firmly &rarr; tamp 10–15kg</li>
+      <li>Filter basket blocked &rarr; unblock with pin</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't come through (loud noise)</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/below MIN &rarr; Fill tank</li>
+      <li>Water filter inserted without soaking &rarr; soak filter 5 min before inserting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso runs out too quickly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too coarsely &rarr; Finer grind</li>
+      <li>Not enough coffee &rarr; increase dose</li>
+      <li>Tamped too lightly &rarr; tamp 10–15kg</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso runs out around portafilter edge</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not inserted correctly &rarr; Insert fully, rotate to resistance</li>
+      <li>Grounds on basket rim &rarr; clean rim</li>
+      <li>Too much coffee &rarr; lower dose</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp &rarr; Allow time to heat</li>
+      <li>Tank empty/not locked &rarr; fill/lock</li>
+      <li>Needs descaling &rarr; descale</li>
+      <li>Wand blocked &rarr; clean wand</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pulsing/pumping sound</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Normal pump operation &rarr; No action needed</li>
+      <li>Or tank empty/not locked &rarr; or fill/lock tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Portafilter not pre-heated &rarr; Rinse under hot water outlet, dry</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Milk too hot</h4>
+    <p class="issue-cause"><em>Possible cause(s): Jug incorrectly positioned</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ensure jug on sensor correctly</li>
+      <li>Adjust milk temp setting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamped too lightly &rarr; Tamp 10–15kg</li>
+      <li>Ground too coarsely &rarr; finer grind</li>
+      <li>Beans not fresh &rarr; fresh beans 5–20 days post-roast</li>
+      <li>Basket blocked &rarr; unblock with pin</li>
+      <li>Single Wall basket with pre-ground coffee &rarr; use Dual Wall basket</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water leaking</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Auto purge feature &rarr; Ensure drip tray pushed in, empty when full</li>
+      <li>Tank not locked &rarr; push tank down to lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <p class="issue-cause"><em>Possible cause(s): Safety thermal cut-out (pump overheating)</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Press 1 CUP + STEAM 5 sec to switch off, unplug, cool 30–60 min</li>
+      <li>Call Sage Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/too little espresso delivered</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind/shot volume needs adjustment &rarr; Adjust grind and shot volume</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> FROTH and TEMPERATURE lights flash together</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Steam function error &rarr; Press and hold STEAM 3 sec to purge system</li>
+      <li>Water tank may be empty &rarr; fill tank</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Alert lights:</strong> lower steam wand alert (MILK TEMP/FOAM flash downward if wand left raised - lower wand, hold STEAM 5s to purge) · blocked mid-texturing (machine stops, STEAM light off, MILK TEMP/FOAM fully lit and flashing until manual purge) · cleaning due after 200 extractions (1 CUP/2 CUP alternate flash) · descale due (1 CUP+STEAM / 2 CUP alternate flash 15 sec) · low water (buttons unlit).</p>
+  <p><strong>Maintenance:</strong> cleaning cycle - disc+tablet, hold 1 CUP+2 CUP 5 sec · descaling every 90 days (hardness 4) / 60 days (hardness 6), remove filter first, hold 1 CUP+STEAM 5 sec · steam wand wipe after every use · factory reset - off (hold 1 CUP+STEAM 5s) → hold 1 CUP+2 CUP 5s → press 1 CUP or 2 CUP (3 flashes = confirmed).</p>
+
+  <h2 id="ses870">SES870 - Barista Express™ (Safety Guide)</h2>
+  <p>This edition is a safety/quick-start pictorial guide, not a full troubleshooting manual - no fault table or error codes. Use the SES875 table below for the same physical machine's full troubleshooting.</p>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Power cord, plug, or appliance damaged</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Stop using immediately; return to nearest authorised Sage Service Centre</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Appliance repaired unprofessionally</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Warranty void; contact authorised service</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> CLEAN ME light illuminated</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Machine needs cleaning/descaling</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water filter</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Replace approximately every 90 days</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Drip tray full</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Full indicator shown on removable drip tray</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter not secured</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Ensure fully inserted before brewing; never remove mid-brew (pressurised)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder run without hopper lid</h4>
+    <div class="steps-label">Guidance</div>
+    <ol class="steps">
+      <li>Do not operate the grinder without the hopper lid fitted</li>
+    </ol>
+  </div>
+  </div>
+
+  <h2 id="ses875">SES875 - Barista Express™</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine doesn't heat / STEAM-HOT WATER light flashes on power-up</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Dial not in STANDBY &rarr; Turn dial to STANDBY</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow / no hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp &rarr; Wait for POWER light to stop flashing</li>
+      <li>Tank empty/not locked &rarr; fill/lock</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips or not at all</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too finely &rarr; Coarser grind</li>
+      <li>Too much coffee &rarr; lower dose</li>
+      <li>Tamped too firmly &rarr; tamp 10–15kg</li>
+      <li>Filter basket blocked &rarr; unblock with pin, soak in dissolved cleaning tablet ~20 min if still blocked</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso runs out too quickly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too coarsely &rarr; Finer grind</li>
+      <li>Not enough coffee &rarr; increase dose</li>
+      <li>Tamped too lightly &rarr; tamp 10–15kg</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso runs around portafilter edge</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not inserted correctly &rarr; Insert fully, rotate to resistance</li>
+      <li>Grounds on rim &rarr; clean rim</li>
+      <li>Silicone seal worn &rarr; replace seal (Allen key procedure)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp &rarr; Wait (condensation purge normal)</li>
+      <li>Tank empty/not locked &rarr; fill/lock</li>
+      <li>Needs descaling &rarr; descale</li>
+      <li>Wand blocked &rarr; clean wand</li>
+      <li>Dial not fully at STEAM &rarr; rotate dial fully</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cups/portafilter not pre-heated &rarr; Pre-heat via hot water outlet/warming tray</li>
+      <li>Milk not hot enough &rarr; heat until jug side hot to touch</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamped too lightly / ground too coarse &rarr; Tamp 10–15kg, grind finer</li>
+      <li>Beans not fresh &rarr; use beans within 2 weeks of roast</li>
+      <li>Basket blocked &rarr; unblock</li>
+      <li>Single Wall basket + pre-ground &rarr; use Dual Wall basket</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Drip tray fills fast</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Auto purge (normal) &rarr; No action</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pulsing/pumping sound</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Normal 15-bar pump &rarr; No action</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water leaking</h4>
+    <p class="issue-cause"><em>Possible cause(s): Auto purge / tank not locked / seal worn</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Lock tank</li>
+      <li>Replace seal if needed</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <p class="issue-cause"><em>Possible cause(s): Safety thermal cut-out</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Switch off, unplug, cool 30–60 min</li>
+      <li>Call <strong>0808 178 1650</strong> if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No ground coffee from grinder</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>No beans &rarr; Fill hopper</li>
+      <li>Blocked chamber/chute &rarr; clean grinder (Advanced Cleaning)</li>
+      <li>Moisture in grinder &rarr; clean and dry (hair dryer OK)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> FILTER SIZE LEDs flashing</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Hopper not attached correctly &rarr; Remove, check for debris, re-lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/too little coffee delivered</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind amount wrong for grind size &rarr; Adjust GRIND AMOUNT dial</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder loud noise</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blockage/foreign object &rarr; Clean grinder chamber and chute</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pressure gauge not working</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Incorrect dose &rarr; Use Razor to ensure correct dose</li>
+      <li>Beans past expiry &rarr; use beans within 4 weeks of roast</li>
+      <li>Grind too coarse &rarr; grind finer, test with rubber disc in empty basket</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Extraction guide:</strong> correct flow starts 8–12 sec, honey-like, golden-brown fine crema, 25–30 sec total · under: flow 1–7 sec, thin/pale crema, bitter-sharp/weak → grind finer, tamp 10–15kg · over: flow after 12 sec or none, dark/spotty crema, bitter-burnt → grind coarser, trim puck with Razor. Dose: 8–11g (1 cup), 16–19g (2 cup).</p>
+  <p><strong>Maintenance:</strong> water filter soak 5 min before install, replace every 3 months/90 days/40L (up to 60L at hardness level 2) · cleaning cycle (CLEAN ME light): disc+tablet in 1-cup basket, hold 1 CUP+2 CUP+POWER ~3 sec, runs ~5 min · descaling every 90 days (hardness 4)/60 days (hardness 6), remove filter first, hold 2 CUP+POWER, 3 stages + rinse · advanced grinder cleaning (10mm socket) if blockage between burrs/outlet · steam wand wipe + brief purge after every use.</p>
+
+  <h2 id="ses876">SES876 - Barista Express™ Impress</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Machine too hot &rarr; Off, wait 30–60 min, back on. Call Breville Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow / no hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp / tank empty / not locked &rarr; Wait / fill / lock tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder time out</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind very fine &rarr; Clean grinder with provided tool</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinding for very long time</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Chute blocked &rarr; Clean chute with brush</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Will not grind / grind stops</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Out of beans &rarr; Add beans</li>
+      <li>Hopper not locked (dose light flashing) &rarr; lock hopper</li>
+      <li>Portafilter not fully inserted &rarr; insert until DOSE light illuminates</li>
+      <li>Lever too low (blocks chute) &rarr; raise lever fully to home</li>
+      <li>Coffee build-up &rarr; clean grinding cradle with brush</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pressure gauge not working</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Incorrect dose / not enough coffee &rarr; Use dual wall baskets or finer grind (call support if persists)</li>
+      <li>Beans past expiry &rarr; use beans 5–20 days post-roast</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Auto time not adjusting</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>In Manual mode &rarr; Press MANUAL DOSE dial to return to auto</li>
+      <li>In Top-up mode &rarr; don't remove portafilter until grind complete</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Dose level not updating</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>In Manual mode &rarr; Press MANUAL DOSE dial</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder doesn't grind all beans</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not enough beans &rarr; Refill hopper or use Manual mode</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Severe overdose</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Single basket in double filter mode &rarr; Select correct filter size</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Severe underdose</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Double basket in single filter mode &rarr; Select correct size, then Reset Auto Dose Time</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Underdosed</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind adjusted finer &rarr; Use "A Bit More" to reach ideal dose</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not running from portafilter</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind too fine &rarr; See Extraction Guide</li>
+      <li>Water tank empty &rarr; fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee runs out too quickly/slowly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind too coarse/fine &rarr; Adjust grind size</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans stale &rarr; Use fresh beans 5–20 days after roast</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee too cold</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cups cold &rarr; Pre-heat cups</li>
+      <li>Milk not heated enough &rarr; heat until jug base hot to touch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Steam wand blocked &rarr; Use pin tool</li>
+      <li>Water tank empty &rarr; fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water from steam wand</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Machine heating up &rarr; Purge before texturing</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Hot water not continuous</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Machine too hot after steaming &rarr; Let it cool</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Lever hard to tamp</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Severe overdose &rarr; Trim with Razor tool, select correct filter size</li>
+      <li>Coffee build-up in mechanism &rarr; remove tamp cover, clean with brush</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Puck surface not flat/smooth</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grinds stuck on tamp face &rarr; Remove tamp cover, clean</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Puck has loose grounds on top</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grinds caught on tamp / tamped too fast &rarr; Push lever again / push down slower</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Tamp height not at desired level</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>On auto mode (fixed height) &rarr; Use Manual mode</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Tamp light flashes, no reading</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamping not completed &rarr; Push lever down until beep</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Maintenance light flashes / solid</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cleaning cycle required / descale required &rarr; Run cleaning cycle / descale cycle</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Alerts:</strong> no hopper → filter lights flash between basket sizes, check hopper locked · low beans → Dose + Dose Level lights flash red, 3 beeps, refill · tamp lever not home → 3 beeps, pauses dose cycle, return lever up and press Dose.</p>
+  <p><strong>Maintenance:</strong> cleaning cycle when CLEAN/DESCALE light flashes - 1 CUP basket + disc + tablet, hold 1 CUP+2 CUP+POWER 3 sec, ~5 min · descaling when light is solid - dissolve 1 sachet in 1L water, remove filter first, hold 2 CUP+POWER 5 sec, descales coffee/steam/hot water separately, repeat + rinse · water filter every 3 months, soak 5 min, rinse 5 sec.</p>
+
+  <h2 id="ses878">SES878 - Barista Pro™</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow / no hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/not locked &rarr; Fill/lock</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips or not at all</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too finely &rarr; Coarser grind</li>
+      <li>Too much coffee &rarr; lower dose, trim with Razor™</li>
+      <li>Tamped too firmly &rarr; tamp 10–15kg</li>
+      <li>Filter basket blocked &rarr; unblock, soak in dissolved tablet ~20 min if still blocked</li>
+      <li>Needs descaling &rarr; descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't come through (loud noise)</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/below MIN &rarr; Fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too coarsely &rarr; Finer grind</li>
+      <li>Not enough coffee &rarr; increase dose, trim with Razor™</li>
+      <li>Tamped too lightly &rarr; tamp 10–15kg</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not inserted correctly &rarr; Insert fully, rotate to resistance</li>
+      <li>Grounds on rim &rarr; clean rim</li>
+      <li>Too much coffee &rarr; lower dose</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water leaking</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank not locked &rarr; Push down to lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp / tank empty / needs descale / wand blocked &rarr; See respective fixes</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pulsing/pumping sound</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Normal pump operation &rarr; No action</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cups/portafilter not pre-heated &rarr; Pre-heat</li>
+      <li>Milk not hot enough &rarr; texture longer</li>
+      <li>Water temp needs adjusting &rarr; increase brew temp in settings</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamped lightly / coarse grind / stale beans / blocked basket / wrong basket type &rarr; See individual fixes</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <p class="issue-cause"><em>Possible cause(s): Safety thermal cut-out</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, unplug, cool 30–60 min</li>
+      <li>Call Sage Support</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No ground coffee from grinder</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>No beans / blocked chamber-chute / moisture &rarr; Fill hopper / clean grinder / dry thoroughly</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/little ground coffee delivered</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind amount wrong for grind size &rarr; Adjust grind duration button</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/little espresso to cup</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind amount/size/shot volume off &rarr; Adjust settings</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder loud noise</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blockage/foreign object &rarr; Clean chamber and chute</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Error Mode icon on LCD</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Contact Sage Customer Service</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Maintenance:</strong> Flush cleaning cycle (LCD FLUSH alert) - disc+tablet, lock in, empty drip tray, fill tank to MAX, Menu → FLUSH → 1 CUP · Descaling (LCD DESCALE alert) - remove filter first, fill to DESCALE line, Menu → DESCALE → 1 CUP, 3 stages (coffee/hot water/steam) + rinse · Conical burr grinder: unlock hopper, empty, run empty, brush burrs and chute.</p>
+
+  <h2 id="ses880">SES880 - Barista Touch™</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow / no hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/not locked/needs descale &rarr; Fill/lock/descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips or not at all</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too finely, too much coffee, tamped too firmly, blocked basket, or needs descale</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>See individual fixes</li>
+      <li>Pin tool then cleaning tablet soak if blocked</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't come through (loud noise)</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/below MIN &rarr; Fill tank</li>
+      <li>Error on purging setting &rarr; factory reset (Settings → Factory Reset) if error</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too coarsely / not enough coffee / tamped lightly &rarr; Adjust grind/dose/tamp</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not inserted correctly / grounds on rim / too much coffee / worn silicone seal</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>See individual fixes</li>
+      <li>Replace seal if needed</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at temp / tank empty / needs descale / wand blocked &rarr; See individual fixes</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pulsing/pumping sound</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Normal pump operation &rarr; No action</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <p class="issue-cause"><em>Possible cause(s): Cups/portafilter not pre-heated / milk not hot / water temp low</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pre-heat</li>
+      <li>Adjust settings</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamped lightly / coarse grind / stale beans / blocked basket / wrong basket type &rarr; See individual fixes</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water leaking</h4>
+    <p class="issue-cause"><em>Possible cause(s): Auto purge (normal) / tank not locked / worn seal</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Empty drip tray regularly</li>
+      <li>Lock tank</li>
+      <li>Replace seal</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <p class="issue-cause"><em>Possible cause(s): Safety thermal cut-out</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, unplug, cool 30–60 min</li>
+      <li>Call Sage Support</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No ground coffee from grinder</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>No beans / blocked chamber-chute / moisture &rarr; Fill / clean / dry (hair dryer OK)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/little ground coffee delivered</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind amount setting wrong &rarr; Adjust grind duration button</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/little espresso delivered</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind/shot volume settings &rarr; Adjust in Settings</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder loud noise</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blockage/foreign object &rarr; Clean chamber and chute</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Extraction guide:</strong> correct 8–12 sec start, honey-like, golden-brown fine crema, dark brown espresso · under: 1–7 sec, thin/pale crema, bitter/weak/watery → grind finer, decrease 1–5 sec · over: after 12 sec or none, dark/spotty crema, bitter/burnt → grind coarser, increase 1–5 sec. Dose 8–11g/16–19g, tamp 10–15kg.</p>
+  <p><strong>Maintenance:</strong> on-screen cleaning cycle (back-flush) · Settings → Descale, guided, never fully remove tank mid-cycle · water filter every 90 days/40L (60L at hardness 2) · Settings-guided steam wand cleaning · silicone seal 8-step guided replacement.</p>
+
+  <h2 id="ses882">SES882 - Barista Touch™ Impress</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow from group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty &rarr; Fill tank</li>
+      <li>Tank not fully inserted/locked &rarr; push in fully, lock latch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty &rarr; Fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <p class="issue-cause"><em>Possible cause(s): Steam wand blocked</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pin tool</li>
+      <li>Unscrew tip with spanner and soak in hot water if still blocked</li>
+      <li>Let machine cool before removing portafilter</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Consumer Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee runs out too quickly</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind too coarse &rarr; Adjust finer</li>
+      <li>Not enough coffee in filter &rarr; see Setting Grind Size and Dosing</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee too cold</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cups not preheated &rarr; Pre-heat cups</li>
+      <li>Milk not heated enough &rarr; check milk temperature setting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans stale &rarr; Use beans 5–20 days after Roasted On date</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Dosing correction (Impress Puck System):</strong> under-dose (below middle bar) → screen shows "A Bit More," tap to add, re-tamp, auto dose time updates for next cycle · over-dose (above middle bar) → remove portafilter, trim excess with Razor™ Trimming Tool, machine reduces next auto-grind time. Under-extracted: flow before 7 sec. Over-extracted: no flow after 12 sec. Ideal flow starts 8–12 sec, honey-like.</p>
+  <p><strong>Maintenance:</strong> descaling via Settings, remove water filter first, never use bottled water, never fully empty tank mid-cycle · water filter every 3 months · filter basket pin tool then cleaning tablet soak (~20 min) if still blocked. <strong>Never use unroasted/under-roasted beans</strong> - can damage burrs, safety risk.</p>
+
+  <h2 id="ses920">SES920 - the Dual Boiler</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Hot Water LED flashes at power-on</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Hot Water dial open &rarr; Turn to CLOSED</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam LED flashes at power-on</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Steam Lever open &rarr; Move to CLOSED</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow from group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not at operating temp / tank empty / not locked &rarr; Wait / fill / lock tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> "FILL TANK" shown but tank full</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank not fully inserted/locked &rarr; Push in fully, close latch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam or hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Machine not on &rarr; Check plugged in, switched on, POWER on</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty &rarr; Fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <p class="issue-cause"><em>Possible cause(s): Steam wand blocked</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pin tool</li>
+      <li>Unscrew tip and soak in hot water if still blocked</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam pouring out of group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso just drips</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too finely / too much coffee / blocked basket</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Coarser grind</li>
+      <li>Lower dose with Razor™</li>
+      <li>Unblock or soak in tablet solution</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too coarse / not enough coffee / tamped too lightly</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Finer grind</li>
+      <li>Increase dose</li>
+      <li>Tamp 15–20kg</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pressure gauge not reaching 9 bar</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Test with empty Dual Wall basket + MANUAL - if &gt;5 bar adjust dose/grind, if &lt;5 bar contact Sage Service Centre</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <p class="issue-cause"><em>Possible cause(s): Cups not preheated / milk not hot</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pre-heat cups</li>
+      <li>Heat milk until jug hot to touch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <p class="issue-cause"><em>Possible cause(s): Stale beans / Single Wall basket + pre-ground</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fresh beans</li>
+      <li>Use Dual Wall basket</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge / portafilter pops out</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not correctly inserted / grounds on rim / wet basket/lugs / too much coffee</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Lock fully past centre</li>
+      <li>Clean rim</li>
+      <li>Dry thoroughly before use</li>
+      <li>Trim dose</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Unable to set auto start time</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clock not set &rarr; Set clock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> E1, E2, or E3 error on LCD</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Non-resettable error &rarr; Contact Sage Customer Service Centre</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee puck sticking to shower screen</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Normal - dry puck vacuum effect &rarr; No fix needed</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pumps continue operating / steam wet / hot water leaks</h4>
+    <p class="issue-cause"><em>Possible cause(s): Demineralised/distilled water in use</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Use cold filtered water</li>
+      <li>Avoid low/no-mineral water</li>
+      <li>Contact support if persists</li>
+    </ol>
+  </div>
+  </div>
+  <p>See also <a href="#dual-boiler-self-power">self-powers-on</a> and <a href="#dual-boiler-inconsistent-shot">inconsistent auto dial-in</a> deep-dives above.</p>
+  <p><strong>Maintenance:</strong> cleaning cycle ~every 200 shots (CLEAN ME! icon) - disc+tablet in 1 CUP basket, press MANUAL, ~370 sec countdown · steam wand wipe + purge after every use · descale ("dESC") ~1.5 hrs total, machine off and cooled ≥1 hr first - off → hold 1 CUP then POWER 3 sec ("rEST") → select "dESC" → MENU to enter; drain both boilers via screws, dissolve 1 sachet in 1L water, run through boilers, drain, flush twice · water filter every 2 months. Never use demineralised/distilled water.</p>
+
+  <h2 id="ses980">SES980 - the Oracle™</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Motor starts, no ground coffee from outlet</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / hopper-grinder blocked / bean stuck</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Remove hopper, inspect, clear blockage</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Motor starts, loud "racket" noise</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blocked by foreign item/chute / moisture clogging &rarr; Remove hopper, clean burrs and outlet, dry fully (hair dryer OK)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Unable to lock bean hopper</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans obstructing lock &rarr; Remove hopper, clear beans from top of burrs, re-lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter overfills</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamping fan removed and not replaced &rarr; Check tamping fan mounted correctly to drive shaft</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Emergency stop needed</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Rotate portafilter left to stop auto grind/dose/tamp</li>
+      <li>Unplug</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> LCD alert (OVERHEAT/HEATING etc.)</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>See LCD Alerts below</li>
+      <li>Contact Sage Service if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder running continuously</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / tamping fan removed</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Rotate portafilter left</li>
+      <li>Check tamping fan</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not inserted correctly / grounds on rim</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Lock fully past centre</li>
+      <li>Clean rim</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter pops out during extraction</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Wet basket rim/lugs &rarr; Dry thoroughly before filling/tamping/inserting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Auto Start issues</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clock not set/incorrect &rarr; Check clock and Auto Start time</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> "ERR" on LCD</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Major fault &rarr; Contact Sage Customer Service Centre</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pumps continue / steam wet / hot water leaks</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Demineralised/distilled water &rarr; Use cold filtered water</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow from group head</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not at temp / tank empty / not locked</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Wait</li>
+      <li>Press 2 CUP 30 sec then HOT WATER 30 sec to prime</li>
+      <li>Fill/lock tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> "FILL TANK" but tank full</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not fully inserted/locked &rarr; Push in fully, lock latch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam or hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Machine not on/ready &rarr; Ensure plugged in, POWER solid (not flashing)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty &rarr; Fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Steam wand blocked &rarr; Clean steam wand</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but ceases to operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Service Centre if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam pouring out of group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Service Centre if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips/restricted</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ground too finely &rarr; Adjust grind coarser</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too coarse / stale beans</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Finer grind</li>
+      <li>Fresh beans (5–20 days post-roast)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <p class="issue-cause"><em>Possible cause(s): Cups not preheated / milk not hot</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pre-heat</li>
+      <li>Increase milk temp setting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Stale beans &rarr; Fresh beans</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Not enough milk texture</h4>
+    <p class="issue-cause"><em>Possible cause(s): Steam wand blocked / milk type variance</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clean wand</li>
+      <li>Adjust texture level</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/not enough coffee extracted</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Grind/shot duration wrong &rarr; Adjust grind/reprogram shot volume</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Extraction amount changed with same settings</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans aging &rarr; Grind finer, reprogram, use fresh beans</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>LCD alerts:</strong> FILL TANK (low water) · CLEAN ME! (200 extractions) · HEATING (heating up/temp dropped) · LOCK HOPPER (not seated, auto grind disabled, 3 beeps) · OVERHEAT PLEASE WAIT (grinder needs to cool, auto grind disabled, 3 beeps) · CHANGE FILTER (due) · MANUAL/steam (lever left in manual, lower to centre OFF).</p>
+  <p><strong>Maintenance:</strong> cleaning cycle (CLEAN ME! after 200 shots) - disc+tablet, MENU → CLEAN CYCLE · conical burrs - unlock hopper, empty, run empty, clean upper+lower burrs, remove tamping fan with magnet, clean outlet · steam wand wipe/purge after every use, soak with cleaning powder if still blocked (1 packet + 240ml hot water, 20 min) · clear water backflush after each session - cleaning disc in basket, press 2 CUP, build pressure 20 sec ×5 · descale ("dESC") ~1.5 hrs, machine off/cooled ≥1 hr.</p>
+
+  <h2 id="ses985">SES985 - the Oracle™ Jet</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Motor starts, no ground coffee</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / hopper-grinder blocked / bean stuck</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Inspect and clear</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Motor starts, loud clicking</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blocked by foreign item/chute / moisture &rarr; Remove hopper, clean burrs/outlet, dry fully</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder motor overheating</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, unplug, rest 5 minutes</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Unable to lock bean hopper</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans obstructing lock &rarr; Remove hopper, clear beans, re-lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter overfills</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamping fan removed, not replaced &rarr; Check tamping fan mounted correctly</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Emergency stop</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Rotate portafilter left</li>
+      <li>Unplug</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder running continuously</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / tamping fan removed</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Rotate portafilter left</li>
+      <li>Check tamping fan</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee grinds very coarse even at low settings / can't reinsert burr</h4>
+    <p class="issue-cause"><em>Possible cause(s): Upper burr misaligned</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Set dial to coarse (45) to remove</li>
+      <li>Clean grinds off burrs</li>
+      <li>Align dots, twist clockwise to lock</li>
+      <li>Reset dial</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not inserted correctly</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Rotate fully right past centre until locked</li>
+      <li>Contact support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter pops out during extraction</h4>
+    <p class="issue-cause"><em>Possible cause(s): Grounds on rim / blocked or damaged steam ring</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clean rim</li>
+      <li>Run group head cleaning cycle</li>
+      <li>Replace steam ring if damaged</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips/restricted</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too fine / scale buildup</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Coarser grind</li>
+      <li>Descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too coarse / stale beans</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Finer grind</li>
+      <li>Fresh beans (5–20 days post-roast)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Stale beans &rarr; Fresh beans</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow from group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty/not locked &rarr; Fill/lock tank</li>
+      <li>Pump overheated from back-to-back use &rarr; let cool</li>
+      <li>Diffuser plate misinstalled &rarr; check diffuser plate orientation</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water in drip tray</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Auto purge on startup/after steaming &rarr; Normal, no fix needed</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but won't operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, unplug, replug, back on</li>
+      <li>Call Sage Consumer Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pumps continue / steam wet / hot water leaks</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Demineralised/distilled water &rarr; Use cold filtered water</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam wand blocked, portafilter dislodges</h4>
+    <p class="issue-cause"><em>Possible cause(s): Limescale in wand</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cool, remove portafilter before reusing wand</li>
+      <li>Clean tip</li>
+      <li>Run steam wand cleaning cycle</li>
+      <li>Descale if still blocked</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Not enough milk texture</h4>
+    <p class="issue-cause"><em>Possible cause(s): Wand blocked / scale / milk type</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clean wand</li>
+      <li>Descale</li>
+      <li>Adjust froth level</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam/hot water, no error shown</h4>
+    <p class="issue-cause"><em>Possible cause(s): Possible valve issue</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Cool, unplug, remove portafilter, replug, recheck</li>
+      <li>Contact Sage Customer Service if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Cannot connect to Wi-Fi</h4>
+    <p class="issue-cause"><em>Possible cause(s): Wrong password / weak signal</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Unplug/replug</li>
+      <li>Retry</li>
+      <li>Move router closer</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No router/hotspot available</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>No internet device &rarr; Skip Wi-Fi setup: Select network → Other → skip Network/Password → "Update later" after 2 failed attempts</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Slow cloud connection/init</h4>
+    <p class="issue-cause"><em>Possible cause(s): Router proximity</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Unplug/replug</li>
+      <li>Reboot router</li>
+      <li>Retry</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Slow software download</h4>
+    <p class="issue-cause"><em>Possible cause(s): Weak signal</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Restart machine</li>
+      <li>Move router closer</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Software downloaded, won't install</h4>
+    <p class="issue-cause"><em>Possible cause(s): Needs reboot</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Unplug/replug</li>
+      <li>Factory reset if still failing</li>
+      <li>Call support</li>
+    </ol>
+  </div>
+  </div>
+  <p>See the <a href="#oracle-jet-tamper-fan">tamper fan policy</a> and <a href="#latch-stuck">latch-stuck fix</a> above before touching this model's dosing.</p>
+  <p><strong>Maintenance:</strong> on-screen/Settings cleaning cycle (back-flush) · Settings → Descale (recommended even with filter installed if scale visible) · steam wand wipe every session, ensure tip refastened tightly · filter basket soak in cleaning powder ~20 min if blocked · water filter every 3 months · water hardness 4–5 → switch to filtered/alternate water source. Never use unroasted/under-roasted beans. Tamper height is not user-adjustable - contact Sage Customer Service.</p>
+
+  <h2 id="ses990">SES990 - the Oracle™ Touch</h2>
+  <div class="issue-list">
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder starts, no ground coffee</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / hopper-grinder blocked / bean stuck</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Inspect and clear</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder starts, loud clicking</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Blocked by foreign item/chute / moisture &rarr; Remove hopper, clean burrs/outlet, dry fully</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Unable to lock bean hopper</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Beans obstructing lock &rarr; Remove hopper, clear beans, re-lock</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter overfills</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tamping fan removed, not replaced &rarr; Check tamping fan mounting</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder emergency stop</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Rotate portafilter left to stop</li>
+      <li>Unplug</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Grinder running continuously</h4>
+    <p class="issue-cause"><em>Possible cause(s): No beans / tamping fan removed</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Fill hopper</li>
+      <li>Rotate portafilter left</li>
+      <li>Check tamping fan</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso around portafilter edge</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not correctly locked / grounds on rim</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Rotate fully right until locked</li>
+      <li>Clean rim</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Portafilter pops out during extraction</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Wet basket/lugs &rarr; Dry thoroughly before use</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso only drips/restricted</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too finely</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Coarser grind</li>
+      <li>Check for scale blockage, descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Espresso out too quickly</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too coarse / stale beans</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Finer grind</li>
+      <li>Use freshly roasted beans</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Too much/too little coffee extracted</h4>
+    <p class="issue-cause"><em>Possible cause(s): Ground too coarse/fine / shot settings</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Adjust grind</li>
+      <li>Customise extraction time via Single/Double button</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No crema</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Stale beans &rarr; Fresh beans (5–20 days post-roast)</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Water doesn't flow from group head</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not at temp / tank empty/not locked</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Wait</li>
+      <li>Prime via Brew 30 sec then Hot Water 30 sec</li>
+      <li>Fill/lock tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> "Water tank empty" shown, tank full</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Not fully inserted/locked &rarr; Push in fully, lock latch</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam or hot water</h4>
+    <p class="issue-cause"><em>Possible cause(s): Not on/ready, or scale blockage</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Ensure ready</li>
+      <li>Descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No hot water</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Tank empty &rarr; Fill tank</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> No steam</h4>
+    <p class="issue-cause"><em>Possible cause(s): Steam wand blocked / scale blockage</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clean wand</li>
+      <li>Descale</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Machine on but won't operate</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Consumer Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Steam pouring out of group head</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Off, wait 60 min, back on. Call Sage Consumer Support if persists</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Pumps continue / steam wet / hot water leaks</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Demineralised/distilled water &rarr; Use cold filtered water</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Not enough milk texture</h4>
+    <p class="issue-cause"><em>Possible cause(s): Wand blocked / scale / milk variance</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clean wand</li>
+      <li>Descale</li>
+      <li>Adjust froth level</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Auto Start issues</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Clock not set correctly &rarr; Check clock/Auto Start time</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> "Operation Error" on touch screen</h4>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Major fault &rarr; Contact Sage Customer Service Centre</li>
+    </ol>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-tag">Issue</span> Coffee not hot enough</h4>
+    <p class="issue-cause"><em>Possible cause(s): Cups not preheated / milk not hot</em></p>
+    <div class="steps-label">Troubleshooting steps</div>
+    <ol class="steps">
+      <li>Pre-heat cups</li>
+      <li>Increase milk temp in settings</li>
+    </ol>
+  </div>
+  </div>
+  <p><strong>Maintenance:</strong> cleaning cycle ~every 200 shots or Settings → Clean Cycle (back-flush) · conical burrs 15-step clean · steam wand wipe/purge every use, soak with cleaning powder (1 packet + 240ml hot water, 20 min) if blocked, refasten tip tightly · filter basket soak in dissolved tablet ~20 min · clear water backflush each session · descale on-screen guided, ~1.5 hrs, off/cooled ≥1 hr, never outside the guided menu · water filter every 3 months · transport/storage: drain both boilers fully first (anti-freeze precaution) · Auto Off after 30 min inactivity.</p>
+
+  <div class="pagefoot">
+    <a href="03-model-specs.html">← Model Specifications</a>
+    <a href="05-customer-care-voice.html">Next: Customer Care Voice (ANCHOR) →</a>
+  </div>
+  <p class="src">Source: PDF/SageTB.md, merged into SageKB.md §11–12; known-issue deep-dives and tamper fan policy from Sage.md and SageKB.md §10.</p>
+</main>
+
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
