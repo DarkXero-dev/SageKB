@@ -61,65 +61,47 @@
   </div>
 
   <h2 id="machine-diagram">Machine at a Glance - Labeled Diagram</h2>
-  <p>A generic Barista-line layout (individual models vary - check <a href="03-model-specs.html">Model Specifications</a> for exact positions and sizes). Use this to point a customer to the right part by name.</p>
-  <div class="schematic-wrap">
-    <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Labeled diagram of a generic Sage espresso machine, showing bean hopper, grinder, grind dial, pressure gauge, water tank, group head, portafilter, steam wand, hot water outlet, cup warming tray, and drip tray">
-      <rect x="220" y="70" width="260" height="260" rx="16" class="schem-part"/>
-      <rect x="220" y="70" width="260" height="14" rx="4" class="schem-part-alt"/>
-      <polygon points="418,20 462,20 452,58 428,58" class="schem-part"/>
-      <ellipse cx="440" cy="20" rx="22" ry="6" class="schem-part-alt"/>
-      <circle cx="255" cy="112" r="15" class="schem-part-alt"/>
-      <circle cx="255" cy="112" r="4" class="schem-part"/>
-      <circle cx="255" cy="168" r="27" class="schem-part-alt"/>
-      <line x1="255" y1="168" x2="270" y2="152" class="schem-line"/>
-      <circle cx="255" cy="168" r="3" class="schem-part"/>
-      <rect x="228" y="245" width="42" height="95" rx="4" class="schem-part-alt" stroke-dasharray="5 4"/>
-      <rect x="310" y="322" width="60" height="18" class="schem-part"/>
-      <rect x="290" y="338" width="100" height="16" rx="6" class="schem-part"/>
-      <ellipse cx="340" cy="362" rx="38" ry="10" class="schem-part-alt"/>
-      <rect x="318" y="370" width="44" height="34" class="schem-part-alt"/>
-      <line x1="328" y1="370" x2="328" y2="392" class="schem-line"/>
-      <line x1="352" y1="370" x2="352" y2="392" class="schem-line"/>
-      <rect x="250" y="404" width="180" height="18" rx="3" class="schem-part"/>
-      <line x1="268" y1="406" x2="268" y2="420" class="schem-line"/>
-      <line x1="298" y1="406" x2="298" y2="420" class="schem-line"/>
-      <line x1="328" y1="406" x2="328" y2="420" class="schem-line"/>
-      <line x1="358" y1="406" x2="358" y2="420" class="schem-line"/>
-      <line x1="388" y1="406" x2="388" y2="420" class="schem-line"/>
-      <line x1="480" y1="190" x2="558" y2="122" class="schem-line" stroke-width="2.4"/>
-      <circle cx="558" cy="122" r="6" class="schem-part"/>
-      <path class="steam-line schem-line" d="M552 108c-3-8 4-11 1-19"/>
-      <path class="steam-line schem-line" style="animation-delay:.4s" d="M562 106c-3-8 4-11 1-19"/>
-      <path class="steam-line schem-line" style="animation-delay:.8s" d="M572 110c-3-8 4-11 1-19"/>
-      <rect x="474" y="252" width="12" height="26" rx="2" class="schem-part-alt"/>
-      <line x1="90" y1="40" x2="222" y2="76" class="schem-line"/>
-      <circle cx="222" cy="76" r="3" class="schem-part"/>
-      <text x="86" y="36" class="schem-label" text-anchor="end">Cup Warming Tray</text>
-      <line x1="90" y1="100" x2="245" y2="112" class="schem-line"/>
-      <text x="86" y="104" class="schem-label" text-anchor="end">Grind Size Dial</text>
-      <line x1="90" y1="168" x2="228" y2="168" class="schem-line"/>
-      <text x="86" y="172" class="schem-label" text-anchor="end">Pressure Gauge (9 bar target)</text>
-      <line x1="90" y1="292" x2="228" y2="292" class="schem-line"/>
-      <text x="86" y="296" class="schem-label" text-anchor="end">Water Tank (removable)</text>
-      <line x1="600" y1="24" x2="440" y2="22" class="schem-line"/>
-      <text x="604" y="28" class="schem-label">Bean Hopper</text>
-      <line x1="600" y1="60" x2="450" y2="55" class="schem-line"/>
-      <text x="604" y="64" class="schem-label">Grinder (inside chassis)</text>
-      <line x1="620" y1="88" x2="558" y2="122" class="schem-line"/>
-      <text x="624" y="92" class="schem-label">Steam Wand</text>
-      <line x1="620" y1="266" x2="486" y2="264" class="schem-line"/>
-      <text x="624" y="270" class="schem-label">Hot Water Outlet</text>
-      <line x1="600" y1="326" x2="370" y2="330" class="schem-line"/>
-      <text x="604" y="330" class="schem-label">Group Head</text>
-      <line x1="600" y1="358" x2="390" y2="346" class="schem-line"/>
-      <text x="604" y="362" class="schem-label">Portafilter</text>
-      <line x1="600" y1="414" x2="430" y2="412" class="schem-line"/>
-      <text x="604" y="418" class="schem-label">Drip Tray</text>
-    </svg>
+  <p>The Barista Express™ (SES875) shown below, since it has every part a Barista-line agent needs to recognise in one shot. Exact positions/features vary by model - check <a href="03-model-specs.html">Model Specifications</a> for the details. Hover a pin, or match the number to the legend below.</p>
+
+  <div class="photo-diagram-wrap">
+    <div class="photo-diagram">
+      <img src="assets/barista-express.png" alt="Sage Barista Express espresso machine, front view, with numbered labels for bean hopper, grinder, grind amount dial, filter size selector, pressure gauge, tamper, portafilter, program and cup buttons, clean/descale and hot water/steam indicators, steam wand, milk jug, drip tray, and cup warming tray">
+      <span class="photo-pin" style="top:13%;left:37%" title="Bean Hopper">1</span>
+      <span class="photo-pin" style="top:23%;left:37%" title="Grinder (inside chassis)">2</span>
+      <span class="photo-pin" style="top:30%;left:33%" title="Grind Amount Dial">3</span>
+      <span class="photo-pin" style="top:38%;left:43%" title="Filter Size Selector">4</span>
+      <span class="photo-pin" style="top:34%;left:50%" title="Pressure Gauge">5</span>
+      <span class="photo-pin" style="top:31%;left:70%" title="Program &amp; Cup Buttons">6</span>
+      <span class="photo-pin" style="top:38%;left:58%" title="Clean/Descale &amp; Hot Water/Steam">7</span>
+      <span class="photo-pin" style="top:47%;left:20%" title="Tamper (integrated)">8</span>
+      <span class="photo-pin" style="top:59%;left:39%" title="Portafilter">9</span>
+      <span class="photo-pin" style="top:52%;left:87%" title="Steam Wand">10</span>
+      <span class="photo-pin" style="top:78%;left:67%" title="Temp Control™ Milk Jug">11</span>
+      <span class="photo-pin" style="top:79%;left:48%" title="Drip Tray">12</span>
+      <span class="photo-pin" style="top:21%;left:78%" title="Cup Warming Tray">13</span>
+    </div>
+    <p class="photo-credit">Official product photo, Sage Appliances (sageappliances.com) - Barista Express™ SES875. Used for internal training reference.</p>
   </div>
+
+  <div class="photo-legend">
+    <div class="photo-legend-item"><span class="photo-legend-num">1</span><span><strong>Bean Hopper</strong><span class="leg-desc">Holds whole beans, feeds the grinder</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">2</span><span><strong>Grinder</strong><span class="leg-desc">Conical burr grinder, inside the chassis below the hopper</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">3</span><span><strong>Grind Amount Dial</strong><span class="leg-desc">Sets how much coffee is dosed per shot</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">4</span><span><strong>Filter Size Selector</strong><span class="leg-desc">Single vs. Double basket dosing</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">5</span><span><strong>Pressure Gauge</strong><span class="leg-desc">Needle should sit in the 9 bar zone during a shot</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">6</span><span><strong>Program &amp; Cup Buttons</strong><span class="leg-desc">Program, 1 CUP, 2 CUP volume buttons</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">7</span><span><strong>Clean/Descale &amp; Hot Water/Steam</strong><span class="leg-desc">Status lights and mode selector</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">8</span><span><strong>Tamper</strong><span class="leg-desc">Integrated, removable, matches the portafilter size</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">9</span><span><strong>Portafilter</strong><span class="leg-desc">Holds the basket; locks into the group head (hidden behind it in this shot)</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">10</span><span><strong>Steam Wand</strong><span class="leg-desc">360° swivel, textures milk</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">11</span><span><strong>Temp Control™ Milk Jug</strong><span class="leg-desc">Heat-indicator strip shows milk temperature</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">12</span><span><strong>Drip Tray</strong><span class="leg-desc">Catches waste water; empty regularly (some models show a full indicator)</span></span></div>
+    <div class="photo-legend-item"><span class="photo-legend-num">13</span><span><strong>Cup Warming Tray</strong><span class="leg-desc">Flat top surface, pre-heats cups</span></span></div>
+  </div>
+
   <div class="callout tip">
     <span class="callout-label">How to use this with a customer</span>
-    Point them to the part by name and rough position: "on the top right, above the machine" (bean hopper), "the round dial on the front" (grind size dial), "the round gauge with the needle" (pressure gauge), "the arm that swivels out the side" (steam wand). Avoids the customer guessing which part you mean.
+    Point them to the part by name and rough position: "on the top left, above the machine" (bean hopper), "the round dial on the front" (grind amount dial), "the round gauge with the needle" (pressure gauge), "the arm that swivels out the side" (steam wand). Avoids the customer guessing which part you mean. Not visible from the front: the <strong>Water Tank</strong> (removable - check the model's own guide for exact fill location) and the <strong>Group Head</strong> (hidden behind the portafilter once inserted).
   </div>
 
   <h2 id="core-parts">Core Parts (all machines)</h2>
