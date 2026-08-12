@@ -72,7 +72,7 @@ var SEARCH_INDEX = [
   { title: "Our Brands - Sage, Baratza, Beanz", page: "05-customer-care-voice.html", anchor: "brands", pageTitle: "Customer Care Voice", keywords: "sage baratza beanz brand voice expectations", snippet: "What each brand's customers expect and how to adjust tone." },
 
   // 06 - Sample Call
-  { title: "Sample Call Transcript - Oracle Jet overdose", page: "06-sample-call.html", anchor: "transcript", pageTitle: "Sample Call", keywords: "albert whitfield oracle jet 21-23g merged anchor", snippet: "Full transcript using the merged A+H → N → C → O → R flow." },
+  { title: "Sample Call Transcript - Oracle Jet overdose", page: "06-sample-call.html", anchor: "transcript", pageTitle: "Sample Call", keywords: "agent whitfield oracle jet 21-23g merged anchor", snippet: "Full transcript using the merged A+H → N → C → O → R flow." },
   { title: "Sample Call Score Card", page: "06-sample-call.html", anchor: "scorecard", pageTitle: "Sample Call", keywords: "post call rating high medium low", snippet: "Rated High/Medium on each ANCHOR step, with notes." },
 
   // 07 - Warranty & Goodwill
@@ -111,7 +111,7 @@ var SEARCH_INDEX = [
   { title: "Where the Buttons Are / Case Status Path", page: "08-salesforce-process.html", anchor: "ui-map", pageTitle: "Salesforce Process", keywords: "toolbar new order refund warranty approval waiting on consumer closed", snippet: "Toolbar layout and the case status bar from open to closed." },
 
   // 09 - Glossary / Team / Ops
-  { title: "Team & Roles", page: "09-glossary-team-ops.html", anchor: "team", pageTitle: "Glossary, Team & Ops", keywords: "albert karijosemito supervisor T2 T3 task force baratza beanz escalation chain", snippet: "Who's who - supervisors, T2/T3, Task Force, Baratza and Beanz teams." },
+  { title: "Team & Roles", page: "09-glossary-team-ops.html", anchor: "team", pageTitle: "Glossary, Team & Ops", keywords: "supervisor T2 T3 task force baratza beanz escalation chain", snippet: "Team structure - supervisors, T2/T3, Task Force, Baratza and Beanz teams." },
   { title: "Escalation Chain, in Order", page: "09-glossary-team-ops.html", anchor: "escalation-chain", pageTitle: "Glossary, Team & Ops", keywords: "front-line agent T2 task force goodwill reassure flowchart escalate", snippet: "Flowchart: front-line agent to T2 to Task Force to Goodwill to close." },
   { title: "Abbreviation Glossary", page: "09-glossary-team-ops.html", anchor: "glossary", pageTitle: "Glossary, Team & Ops", keywords: "ACCO ASC DOA FOC GWG IW OOW POP RM SF SKU TBS WO", snippet: "Full A-Z abbreviation list used in cases and comments." },
   { title: "Greek Bank Holidays (Pay Rule)", page: "09-glossary-team-ops.html", anchor: "holidays", pageTitle: "Glossary, Team & Ops", keywords: "75 percent sunday holiday pay epiphany independence day", snippet: "+75% pay for Sundays and the 9 official Greek bank holidays." },
